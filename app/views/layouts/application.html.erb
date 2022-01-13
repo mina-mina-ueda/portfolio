@@ -4,12 +4,44 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <p>店名</p>
+    </header>
+    <main class="mb-auto">
     <%= yield %>
+    </main>
+
+    <footer>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <ul class="navbar-nav ml-auto">
+          <% if customer_signed_in? %>
+            <p><%= current_customer.nickname %></p>
+          <% end %>
+          <% if customer_signed_in? %>
+            <li><%= link_to "投稿一覧", posts_path %></li>
+            <li><%= link_to "マイページ", customer_path %></li>
+            <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+          <% elsif admin_signed_in? %>
+            <li><%= link_to "投稿一覧", admin_posts_path %></li>
+            <li><%= link_to "会員一覧", admin_customers_path %></li>
+            <li><%= link_to "イベント", edit_admin_event_post_path %></li>
+            <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "投稿一覧", posts_path %></li>
+            <li><%= link_to "新規登録", new_customer_registration_path %></li>
+            <li><%= link_to "ログイン", new_customer_session_path %></li>
+          <%end %>
+          </ul>
+        </div>
+      </nav>
+    </footer>
   </body>
 </html>
