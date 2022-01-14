@@ -10,7 +10,7 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
+    <header>
       <p class="text-center">フレッシュ</p>
         <% if customer_signed_in? %>
           <p><%= current_customer.nickname %></p>
@@ -20,16 +20,24 @@
     <%= yield %>
     </main>
 
-    <footer class="shadow-sm">
+    <footer>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <ul class="navbar-nav ml-auto">
+          <ul>
           <% if admin_signed_in? %>
-            <div class="d-flex justify-content-between">
+            <div class="row">
+              <div class="col-3 col-3">
               <li class="p-2 bd-highlight"><%= link_to "投稿一覧", admin_posts_path, class: "btn btn-secondary" %></li>
+              </div>
+              <div class="col-3 col-3">
               <li class="p-2 bd-highlight"><%= link_to "会員一覧", admin_customers_path, class: "btn btn-secondary" %></li>
+              </div>
+              <div class="col-3 col-3">
               <li class="p-2 bd-highlight"><%= link_to "イベント", admin_event_posts_path, class: "btn btn-secondary" %></li>
+              </div>
+              <div class="col-3 col-3">
               <li class="p-2 bd-highlight"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary" %></li>
+          </div>
             </div>
           <% elsif customer_signed_in? %>
             <li class="p-2 bd-highlight"><%#= link_to "投稿一覧", posts_path, class: "btn btn-secondary"  %></li>
