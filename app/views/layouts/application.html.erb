@@ -11,7 +11,10 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <p>店名</p>
+      <p class="text-center">フレッシュ</p>
+        <% if customer_signed_in? %>
+          <p><%= current_customer.nickname %></p>
+        <% end %>
     </header>
     <main class="mb-auto">
     <%= yield %>
@@ -21,27 +24,26 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <ul class="navbar-nav ml-auto">
-          <% if customer_signed_in? %>
-            <p><%= current_customer.nickname %></p>
-          <% end %>
-          <% if customer_signed_in? %>
-            <li><%= link_to "投稿一覧", posts_path %></li>
+          <% if admin_signed_in? %>
+            <div class="row">
+                <li><%= link_to "投稿一覧", admin_posts_path, class: "btn btn-secondary" %></li>
+              <li><%= link_to "会員一覧", admin_customers_path, class: "btn btn-secondary" %></li>
+              <li><%= link_to "イベント", admin_event_posts_path, class: "btn btn-secondary" %></li>
+              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary" %></li>
+            </div>
+          <% elsif customer_signed_in? %>
+            <li><%#= link_to "投稿一覧", posts_path,  %></li>
             <li><%= link_to "マイページ", customer_path %></li>
             <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-          <% elsif admin_signed_in? %>
-            <li><%= link_to "投稿一覧", admin_posts_path %></li>
-            <li><%= link_to "会員一覧", admin_customers_path %></li>
-            <li><%= link_to "イベント", admin_event_posts_path %></li>
-            <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "投稿一覧", posts_path %></li>
             <li><%= link_to "新規登録", new_customer_registration_path %></li>
             <li><%= link_to "ログイン", new_customer_session_path %></li>
-          <%end %>
           </ul>
+          <% end %>
         </div>
       </nav>
-    </footer>
+   </footer>
   </body>
 </html>
