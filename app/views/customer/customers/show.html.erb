@@ -10,9 +10,24 @@
             </div>
               <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"メールアドレス" %>
           </div>
-            
-            
-            
+
+          <div class="input-group mb-3">
+            <%= f.label :gender, '性別' %>
+            <%= f.select :gender, ['男性', '女性'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.label :age, '年齢' %>
+            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.label :work, '職業' %>
+            <%= f.select :work, ['公務員', '会社員', '自営業', '専業主婦', 'パート・アルバイト', '学生', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.label :access, '来店手段' %>
+            <%= f.select :access, ['徒歩', '自転車', '車', 'バス', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+
             <% end %>
           </div>
             <%= f.submit "変更を保存", class:"btn btn-lg btn-block btn-info mt-5" %>
