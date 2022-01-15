@@ -13,41 +13,37 @@
     <header>
       <p class="text-center">フレッシュ</p>
         <% if customer_signed_in? %>
-          <p><%= current_customer.nickname %></p>
+          <p><%= current_customer.nickname %>さん</p>
         <% end %>
     </header>
     <main class="mb-auto">
     <%= yield %>
     </main>
-
     <footer>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <ul>
           <% if admin_signed_in? %>
             <div class="row">
-              <div class="col-3 col-3">
-              <li class="p-2 bd-highlight"><%= link_to "投稿一覧", admin_posts_path, class: "btn btn-secondary" %></li>
-              </div>
-              <div class="col-3 col-3">
-              <li class="p-2 bd-highlight"><%= link_to "会員一覧", admin_customers_path, class: "btn btn-secondary" %></li>
-              </div>
-              <div class="col-3 col-3">
-              <li class="p-2 bd-highlight"><%= link_to "イベント", admin_event_posts_path, class: "btn btn-secondary" %></li>
-              </div>
-              <div class="col-3 col-3">
-              <li class="p-2 bd-highlight"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary" %></li>
-          </div>
+              <li class="col-sm-3"><%= link_to "投稿一覧", admin_posts_path, class: "btn btn-secondary " %></li>
+              <li class="col-sm-3"><%= link_to "会員一覧", admin_customers_path, class: "btn btn-secondary " %></li>
+              <li class="col-sm-3"><%= link_to "イベント", admin_event_posts_path, class: "btn btn-secondary " %></li>
+              <li class="col-sm-3"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></li>
             </div>
           <% elsif customer_signed_in? %>
-            <li class="p-2 bd-highlight"><%#= link_to "投稿一覧", posts_path, class: "btn btn-secondary"  %></li>
-            <li class="p-2 bd-highlight"><%= link_to "マイページ", customer_path, class: "btn btn-secondary" %></li>
-            <li class="p-2 bd-highlight"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-secondary" %></li>
+            <div class="row">
+              <li class="col-sm-3"><%= link_to "投稿する", new_post_path, class: "btn btn-secondary"  %></li>
+              <li class="col-sm-3"><%= link_to "投稿を見る", posts_path, class: "btn btn-secondary"  %></li>
+              <li class="col-sm-3"><%#= link_to "マイページ", customer_path, class: "btn btn-secondary" %></li>
+              <li class="col-sm-3"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-secondary" %></li>
+            </div>
           <% else %>
-            <li class="p-2 bd-highlight"><%= link_to "About", about_path, class: "btn btn-secondary" %></li>
-            <li class="p-2 bd-highlight"><%= link_to "投稿一覧", posts_path, class: "btn btn-secondary" %></li>
-            <li class="p-2 bd-highlight"><%= link_to "新規登録", new_customer_registration_path, class: "btn btn-secondary" %></li>
-            <li class="p-2 bd-highlight"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-secondary" %></li>
+            <div class="row">
+              <li class="col-sm-3"><%= link_to "About", about_path, class: "btn btn-secondary" %></li>
+              <li class="col-sm-3"><%= link_to "投稿一覧", posts_path, class: "btn btn-secondary" %></li>
+              <li class="col-sm-3"><%= link_to "新規登録", new_customer_registration_path, class: "btn btn-secondary" %></li>
+              <li class="col-sm-3"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-secondary" %></li>
+            </div>
           </ul>
           <% end %>
         </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h2>投稿する</h2>
+      <div class="form-body p-4">
+        <%= form_with model:@post, local: true do |f| %>
+          <table class="event_post">
+            <tr>
+              <th>カテゴリー</th>
+              <td><%= f.select :category, {'商品': 1, 'サービス': 2, '設備': 3, 'その他': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true }%>
+              </td>
+            </tr>
+            <tr>
+              <th>タイトル</th>
+              <td><%= f.text_field :title %></td>
+            </tr>
+            <tr>
+              <th>本文</th>
+              <td><%= f.text_area :body %></td>
+            </tr>
+          </table>
+          <%= f.submit "声を投稿する", class:"btn btn-lg btn-block btn-info mt-5" %>,
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
