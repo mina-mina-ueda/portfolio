@@ -6,7 +6,7 @@
       <div class="form-body p-4">
         <%= form_with model:@post, local: true do |f| %>
               <h4>カテゴリー</h4>
-              <%= f.select :category, {'商品': 1, 'サービス': 2, '設備': 3, 'その他': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true }%>
+              <%= f.select :category, ['商品', 'サービス', '設備', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true }%>
               <h4>タイトル</h4>
               <%= f.text_field :title %>
               <h4>本文</h4>

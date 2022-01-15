@@ -38,19 +38,19 @@
             </div>
           <div class="input-group mb-3">
             <%= f.label :gender, '性別' %>
-            <%= f.select :gender, {'男性': 1, '女性': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.select :gender, ['男性', '女性'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
             <%= f.label :age, '年齢' %>
-            <%= f.select :age, {'10代': 1, '20代': 2, '30代': 3, '40代': 3, '50代': 5, '60代': 6, '70代': 7, '80代': 8, '90代': 9, 'その他': 10}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
             <%= f.label :work, '職業' %>
-            <%= f.select :work, {'公務員': 1, '会社員': 2, '自営業': 3, '専業主婦': 4, 'パート・アルバイト': 5, '学生': 6, 'その他': 7}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.select :work, ['公務員', '会社員', '自営業', '専業主婦', 'パート・アルバイト', '学生', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
             <%= f.label :access, '来店手段' %>
-            <%= f.select :access, {'徒歩': 1, '自転車': 2, '車': 3, 'バス': 4, 'その他': 5}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.select :access, ['徒歩', '自転車', '車', 'バス', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
           </div>
     <%= f.submit "Sign up", class:"btn btn-lg btn-block btn-info mt-5" %>
   </div>
