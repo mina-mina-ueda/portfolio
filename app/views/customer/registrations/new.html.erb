@@ -42,7 +42,7 @@
           </div>
           <div class="input-group mb-3">
             <%= f.label :age, '年齢' %>
-            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank:  @customer.age}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
             <%= f.label :work, '職業' %>
