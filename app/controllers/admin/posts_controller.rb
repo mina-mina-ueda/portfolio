@@ -1,8 +1,12 @@
 class Admin::PostsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
+    @post = Post.all
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -10,4 +14,7 @@ class Admin::PostsController < ApplicationController
 
   def update
   end
+
+  private
+
 end

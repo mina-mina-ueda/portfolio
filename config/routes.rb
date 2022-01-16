@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
 
   devise_for :customers, skip: [:passwords], controllers: {
-    registrations: 'customers/registrations',
-    sessions: 'customers/sessions'
+    registrations: 'customer/registrations',
+    sessions: 'customer/sessions'
   }
 
   #管理者側
@@ -14,16 +14,17 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :customers, only: [:index]
-    resources :posts, only: [:index, :show, :edit, :update]
+    resources :posts, only: [:index, :show, :edit, :update] do
+      resources :responses, only: [:index, :new, :create]
+    end
     resources :event_posts, only: [:edit, :update, :index]
-    resources :responses, only: [:index, :new, :create]
   end
 
   #顧客側
   scope module: :customer do
     root to: 'homes#top'
     get 'about' => 'homes#about'
-    resources :customers, only: [:show, :update]
+    resources :customers, only: [:edit, :update]
       get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
     resources :posts, except: [:destroy, :edit, :update]

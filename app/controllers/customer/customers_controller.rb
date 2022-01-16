@@ -1,5 +1,6 @@
 class Customer::CustomersController < ApplicationController
-  def show
+  def edit
+    @customer = Customer.find(params[:id])
   end
 
   def update
@@ -10,4 +11,10 @@ class Customer::CustomersController < ApplicationController
 
   def unsubscribe
   end
+
+  def post_params
+    params.require(:customer).permit(:nickname, :age, :gender, :work, :access, :customer_id)
+  end
+
+
 end

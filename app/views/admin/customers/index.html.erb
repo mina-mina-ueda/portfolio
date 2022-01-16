@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <h3>会員一覧</h3>
+  </div>
+  <table class="table table-hover border">
+    <thead class="table-warning">
+      <tr>
+        <th scope="col" style="width: 3%">会員ID</th>
+        <th scope="col" style="width: 3%">ニックネーム</th>
+        <th scope="col" style="width: 3%">年齢</th>
+        <th scope="col" style="width: 3%">性別</th>
+        <th scope="col" style="width: 3%">職業</th>
+        <th scope="col" style="width: 3%">来店手段</th>
+      </tr>
+    </thead>
+    <tbody>
+  		<% @customer.each do |customer| %>
+  	    <tr>
+    		  <td><%= customer.id %></td>
+    		  <td><%= customer.nickname %></td>
+    		  <td><%= customer.age %></td>
+    		  <td><%= customer.gender %></td>
+    		  <td><%= customer.work %></td>
+    		  <td><%= customer.access %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

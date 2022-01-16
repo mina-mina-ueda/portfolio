@@ -1,0 +1,26 @@
+<div class='container px-5 px-sm-0'>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>お客様投稿一覧</h3>
+      <% @post.each do |post| %>
+        <div class="card" style="width: 280px;">
+          <h3 class="card-header">
+            <%= post.category %><%= post.title %>
+          </h3>
+          <div class="card-body">
+            <%= post.body %>
+          </div>
+          <div class="card-footer">
+            <%= link_to "詳しく見る", post_path(post), class: "btn btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
+  	</div>
+  	  <div class="col-md-4">
+      	<h3 class="text-center">イベント情報</h3>
+        <h5><%#= event_post.title %></h5>
+        <h5><%#= event_post.body %></td>
+        <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
+      </div>
+  </div>
+</div>
