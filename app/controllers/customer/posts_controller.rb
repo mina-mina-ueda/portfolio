@@ -7,6 +7,7 @@ class Customer::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    #@response = Response.find(params[:response_id])
   end
 
   def new

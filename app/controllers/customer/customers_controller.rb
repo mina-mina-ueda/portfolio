@@ -4,6 +4,12 @@ class Customer::CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to posts_path, notice: "You have updated user successfully."
+    else
+      render :edit
+    end
   end
 
   def withdraw
@@ -12,7 +18,8 @@ class Customer::CustomersController < ApplicationController
   def unsubscribe
   end
 
-  def post_params
+  private
+  def customer_params
     params.require(:customer).permit(:nickname, :age, :gender, :work, :access, :customer_id)
   end
 
