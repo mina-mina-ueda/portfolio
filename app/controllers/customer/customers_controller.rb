@@ -13,6 +13,7 @@ class Customer::CustomersController < ApplicationController
   end
 
   def unsubscribe
+    @customer = Customer.find_by(params[:id])
   end
 
   def withdraw
@@ -24,7 +25,7 @@ class Customer::CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:nickname, :age, :gender, :work, :access, :customer_id)
+    params.require(:customer).permit(:nickname, :age, :gender, :work, :access, :customer_id, :email, :is_deleted)
   end
 
 
