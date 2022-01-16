@@ -4,14 +4,16 @@ class Admin::ResponsesController < ApplicationController
 
   def new
     @response = Response.new
+    @post = Post.find(params[:post_id])
   end
 
   def create
-    @response = Response.new(post_params)
+    @response = Response.new(response_params)
     post_id = params[:post_id]
     @response.post_id = post_id
+    @response.admin_id = current_admin.id
     @response.save!
-    redirect_to posts_path
+    redirect_to admin_posts_path
   end
 
   private
@@ -19,7 +21,4 @@ class Admin::ResponsesController < ApplicationController
     params.require(:response).permit(:response)
   end
 
-  def post_params
-    params.require(:post).permit(:title, :body, :categoey, :customer_id)
-  end
 end
