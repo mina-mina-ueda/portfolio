@@ -7,7 +7,7 @@ class Customer::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    #@response = Response.find(params[:response_id])
+    #@response = @post.response
   end
 
   def new
@@ -18,7 +18,7 @@ class Customer::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.customer_id = current_customer.id
     @post.save!
-    redirect_to posts_path
+    redirect_to thanks_posts_path
   end
 
   def thanks
