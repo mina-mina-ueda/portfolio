@@ -2,7 +2,7 @@ class Customer::PostsController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @post = Post.all
+    @response = Response.all
   end
 
   def show

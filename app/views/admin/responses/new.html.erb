@@ -18,7 +18,7 @@
       <h2 class="text-center">投稿する</h2>
       <div class="form-body p-4">
         <%= form_with model:@response, url:admin_post_responses_path do |f| %>
-            <h4>返答を書く</h4>
+            <p>返答を書く</p>
             <%= f.text_field :response %>
           <div class="post-buttom text-center">
           <%= f.submit "返答を送る", class:"btn btn-info" %>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+     puts sample0.encode(Encoding::UTF_8)
+     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,8 +20,9 @@
       <div class="col-md-3 text-end">
         <% if customer_signed_in? %>
           <p><%= current_customer.nickname %>さん</p>
-        <% else admin_signed_in?%>
+        <% elsif admin_signed_in?%>
           <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
+        <% else %>
         <% end %>
       </div>
     </header>
