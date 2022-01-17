@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div class="fixed-top">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"></svg>
@@ -17,11 +18,14 @@
       <p class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">フレッシュ</p>
       <div class="col-md-3 text-end">
         <% if customer_signed_in? %>
-        <p><%= current_customer.nickname %>さん</p>
+          <p><%= current_customer.nickname %>さん</p>
+        <% else admin_signed_in?%>
+          <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
         <% end %>
       </div>
     </header>
-    <main class="mb-auto">
+      </div>
+    <main class>
     <%= yield %>
     </main>
     <div class="fixed-bottom">
@@ -32,7 +36,7 @@
               <li class="nav-list"><%= link_to "未返答一覧", admin_posts_path, class: "btn btn-secondary " %></li>
               <li class="nav-list"><%= link_to "会員一覧", admin_customers_path, class: "btn btn-secondary " %></li>
               <li class="nav-list"><%= link_to "イベント", admin_event_posts_path, class: "btn btn-secondary " %></li>
-              <li class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></li>
+              <li class="nav-list"><%= link_to "投稿一覧", admin_posts_path, class: "btn btn-secondary " %></li>
           <% elsif customer_signed_in? %>
               <li class="nav-list"><%= link_to "投稿する", new_post_path, class: "btn btn-secondary"  %></li>
               <li class="nav-list"><%= link_to "投稿を見る", posts_path, class: "btn btn-secondary"  %></li>

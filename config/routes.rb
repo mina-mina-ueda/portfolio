@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :edit, :update] do
       resources :responses, only: [:index, :new, :create]
     end
-    resources :event_posts, only: [:edit, :update, :index]
+    resources :event_posts, only: [:edit, :update, :index, :new, :create]
   end
 
   #顧客側
