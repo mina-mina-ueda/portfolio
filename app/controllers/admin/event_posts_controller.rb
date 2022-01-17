@@ -7,4 +7,6 @@ class Admin::EventPostsController < ApplicationController
 
   def update
   end
+
+
 end
