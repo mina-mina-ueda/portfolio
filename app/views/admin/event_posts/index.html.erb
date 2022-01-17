@@ -1,24 +1,27 @@
-
-<div class="container px-5 px-sm-0">
-  <div class="row">
-    <div class="col-md-8 mr-5">
-      <h3>イベント投稿一覧</h3>
-      <table class="table table-hover table-inverse">
-        <thead>
-          <tr>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <td></td>
-        </tbody>
-      </table>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+        <div class="col-md-8">
+<h3 class="text-center">イベント投稿一覧</h3>
+          <%# @event_post.each do |event_post| %>
+          <div class="card" style="width: 340px;">
+            <p class="card-header">
+              <%#= event_post.title %>
+            </p>
+            <div class="card-body" style="height: 200px;">
+              <p class="card-text">
+                <%#= post.body %>
+              </p>
+            </div>
+            <div class="card-footer" style="height: 50px;">
+            </div>
+          </div>
+          <%# end %>
+          </div>
+  	      <div class="col-md-4">
+            <h3 class="text-center">イベント情報</h3>
+            <h5>66</h5>
+            <h5>55</td><br>
+            <%= link_to "イベントを作る", new_admin_event_post_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3">
-    	<h3>イベント情報</h3>
-      <h5><%#= event_post.title %></h5>
-      <h5><%#= event_post.body %></td>
-      <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
-    </div>
-  </div>
-</div>

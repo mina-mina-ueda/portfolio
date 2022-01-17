@@ -1,33 +1,29 @@
-<h3>お客様投稿一覧:未返答</h3>
-  <div class="album py-5 bg-light">
-    <div class='container'>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
         <div class="col-md-8">
+<h3 class="text-center">お客様未返答投稿一覧</h3>
           <% @post.each do |post| %>
-          <div class="card" style="width: 280px;">
-            <h3 class="card-header">
+          <div class="card" style="width: 340px;">
+            <p class="card-header">
               <%= post.category %><%= post.title %>
-            </h3>
-            <div class="card-body">
+            </p>
+            <div class="card-body" style="height: 200px;">
               <p class="card-text">
                 <%= post.body %>
               </p>
-            <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-            <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-secondary" %>
-              </div>
             </div>
+            <div class="card-footer" style="height: 50px;">
+              <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-secondary" %>
+            　<%= 削除する %>
             </div>
           </div>
           <% end %>
           </div>
   	      <div class="col-md-4">
             <h3 class="text-center">イベント情報</h3>
-            <h5><%#= event_post.title %></h5>
-            <h5><%#= event_post.body %></td>
+            <h5>66</h5>
+            <h5>55</td>
             <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
         </div>
       </div>
     </div>
-  </div>
-
