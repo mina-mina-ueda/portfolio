@@ -1,5 +1,6 @@
 class Admin::ResponsesController < ApplicationController
   def index
+    @response = Response.all
   end
 
   def new

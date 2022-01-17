@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :customers, only: [:index]
     resources :posts, only: [:index, :show, :edit, :update] do
-      resources :responses, only: [:index, :new, :create]
+      resources :responses, only: [:new, :create]
     end
+    resources :responses, only: [:index]
     resources :event_posts, only: [:edit, :update, :index, :new, :create]
   end
 
