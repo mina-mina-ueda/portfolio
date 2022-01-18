@@ -18,7 +18,8 @@ Rails.application.routes.draw do
       resources :responses, only: [:new, :create]
     end
     resources :responses, only: [:index]
-    resources :event_posts, only: [:edit, :update, :index, :new, :create]
+    resources :events, only: [:new, :create, :edit, :update]
+    resources :event_posts, only: [:index]
   end
 
   #顧客側
@@ -35,5 +36,6 @@ Rails.application.routes.draw do
     end
     resources :event_posts, only: [:new, :create]
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

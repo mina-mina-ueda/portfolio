@@ -19,9 +19,10 @@
           </div>
   	      <div class="col-md-4">
             <h3 class="text-center">イベント情報</h3>
-            <h5>66</h5>
-            <h5>55</td><br>
-            <%= link_to "イベントを作る", new_admin_event_post_path, class: "btn btn-secondary" %>
+            <p><%= @event.title %></p><br>
+            <p><%= @event.body %></p><br>
+            <p><%= @event.period %></p><br>
+            <%= link_to "イベントを作る", new_admin_event_path, class: "btn btn-secondary" %>
         </div>
       </div>
     </div>
