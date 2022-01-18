@@ -1,6 +1,8 @@
 class Admin::EventPostsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
-    @event = Event.find(params[:id])
+    @event = Event.all
   end
 
   private

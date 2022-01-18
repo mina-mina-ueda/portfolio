@@ -1,6 +1,4 @@
 class Customer::PostsController < ApplicationController
-  before_action :authenticate_customer!
-
   def index
     @response = Response.all
   end
