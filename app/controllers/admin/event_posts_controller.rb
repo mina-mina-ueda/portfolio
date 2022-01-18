@@ -6,5 +6,4 @@ class Admin::EventPostsController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
-  private
 end

@@ -1,6 +1,7 @@
 class Customer::PostsController < ApplicationController
   def index
     @response = Response.all
+    @events = Event.all
   end
 
   def show
