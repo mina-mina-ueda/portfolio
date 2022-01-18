@@ -14,9 +14,10 @@
             </div>
             <div class="card-footer" style="height: 200px;">
               <p class="card-text">
-                <%= response %>
+                <%= response.response %>
               </p>
-              <p>編集</p>
+
+              <p><%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %></p>
             </div>
           </div>
           <% end %>

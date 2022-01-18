@@ -18,8 +18,9 @@ Rails.application.routes.draw do
       resources :responses, only: [:new, :create]
     end
     resources :responses, only: [:index]
-    resources :events, only: [:new, :create, :edit, :update]
-    resources :event_posts, only: [:index]
+    resources :events, only: [:index, :new, :create, :edit, :update] do
+      resources :event_posts, only: [:index]
+    end
   end
 
   #顧客側
