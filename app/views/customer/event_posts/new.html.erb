@@ -7,7 +7,7 @@
               <h4>本文</h4>
               <%#= @event.body %>
               <h4>期間</h4>
-              <%= @event.period %>
+              <%#= @event.period %>
       <div class="form-group">
       <h2 class="text-center">イベントに投稿する</h2>
       <div class="form-body p-4">
@@ -15,7 +15,7 @@
               <h4>本文</h4>
               <%= f.text_area :body %>
           <div class="post-buttom text-center">
-          <%= f.submit "イベントを作成する", class:"btn btn-info" %>
+          <%= f.submit "イベントに投稿する", class:"btn btn-info" %>
           </div>
         <% end %>
 　　　</div>

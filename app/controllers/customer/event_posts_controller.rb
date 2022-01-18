@@ -2,12 +2,14 @@ class Customer::EventPostsController < ApplicationController
   before_action :move_to_signed_in
 
   def new
-    @event = Event.find(params[:event_id])
     @event_post = EventPost.new
+    @event = Event.find(params[:id])
   end
 
   def create
     @event_post = EventPost.new(event_post_params)
+    event_id = params[:event_id]
+    @event_post.event_id = event_id
     @event_post.customer_id = current_customer.id
     @event_post.save!
     redirect_to thanks_posts_path
