@@ -2,11 +2,10 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
       <div class="col-md-8">
         <h3 class="text-center">お客様未返答投稿一覧</h3>
-          <%# if @response_save? %>
-          <div class="nodisplay_box">none</div>
-          <%# else %>
+
           <div class="display_box">
             <% @post.each do |post| %>
+              <% if post.response.nil? %>
               <div class="card" style="width: 340px;">
                   <p class="card-header">
                     <%= post.category %><%= post.title %>
@@ -22,8 +21,9 @@
                 </div>
               </div>
             <% end %>
+            <% end %>
           </div>
-        <%# end %>
+
         <%#= paginate @post %>
       </div>
 
