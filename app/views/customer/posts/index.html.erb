@@ -30,7 +30,7 @@
             <p><%= event.title %></p>
             <p><%= event.body %></p>
             <p><%= event.period %>まで</p>
-            <%= link_to "イベントに投稿する", new_event_post_path(event), class: "btn btn-secondary" %>
+            <%= link_to "イベントに投稿する", new_event_event_post_path(event), class: "btn btn-secondary" %>
           <% end %>
         </div>
       </div>

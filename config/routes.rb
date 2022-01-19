@@ -35,7 +35,9 @@ Rails.application.routes.draw do
         get 'thanks'
       end
     end
-    resources :event_posts, only: [:new, :create]
+    resources :events, only: [:show] do
+      resources :event_posts, only: [:new, :create]
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
