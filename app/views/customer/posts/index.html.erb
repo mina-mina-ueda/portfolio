@@ -1,14 +1,21 @@
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-        <div class="col-md-8">
-          <% if flash[:notice] %>
-            <p class="text-active"><%= flash[:notice] %></p>
-          <% end %>
-<h3 class="text-center">お客様投稿一覧:返答済み</h3>
-          <% @response.each do |response| %>
+<div class="py-5 text-center container">
+  <% if flash[:notice] %>
+    <p class="text-active"><%= flash[:notice] %></p>
+  <% end %>
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      いらっしゃいませ
+      </div>
+    </div>
+</div>
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="col-md-8">
+      <h3 class="text-center">お客様投稿一覧:返答済み</h3>
+        <% @response.each do |response| %>
           <div class="card" style="width: 340px;">
             <p class="card-header">
-              <%= response.post.category %><%= response.post.title %>
+            <%= response.post.category %><%= response.post.title %>
             </p>
             <div class="card-body" style="height: 200px;">
               <p class="card-text">
@@ -16,22 +23,23 @@
               </p>
             </div>
             <div class="card-footer" style="height: 200px;">
-              <p class="card-text">
-                <%= response.response %>
-              </p>
+            <p class="card-text">
+              <%= response.response %>
+            </p>
             </div>
           </div>
-          <% end %>
-          </div><br>
-          <%= paginate @response %>
-  	      <div class="col-md-4">
-            <h3 class="text-center">イベント情報</h3>
-          <% @events.each do |event| %>
-            <p><%= event.title %></p>
-            <p><%= event.body %></p>
-            <p><%= event.period %>まで</p>
-            <%= link_to "イベントに投稿する", new_event_event_post_path(event), class: "btn btn-secondary" %>
-          <% end %>
-        </div>
+        <% end %>
+      </div>
+  　</div>
+      <%= paginate @response %>
+      <div class="col-md-4">
+        <h3 class="text-center">イベント情報</h3>
+        <% @events.each do |event| %>
+          <p><%= event.title %></p>
+          <p><%= event.body %></p>
+          <p><%= event.period %>まで</p>
+          <%= link_to "イベントに投稿する", new_event_event_post_path(event), class: "btn btn-secondary" %>
+        <% end %>
       </div>
     </div>
+  </div>

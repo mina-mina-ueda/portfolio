@@ -20,12 +20,12 @@ body {
 }
 
 header {
-  background-color: yellow;
   margin-bottom: 30px;
+  background-image: image-url('header.jpg'),
 }
 
 footer {
-  background-color: yellow;
+  background-image: image-url('header.jpg'),
 }
 
 ul {
@@ -56,3 +56,8 @@ main {
   font-weight: bold;
   color: #0a0;
 }
+
+.top-image {
+  background-image: image-url('top.jpg'),
+}
+
