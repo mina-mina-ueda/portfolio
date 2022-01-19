@@ -2,21 +2,21 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
         <div class="col-md-8">
 <h3 class="text-center">イベント投稿一覧</h3>
-          <%# @event_posts.each do |event_post| %>
+          <% @event_posts.each do |event_post| %>
           <div class="card" style="width: 340px;">
             <p class="card-header">
-              <%#= event_post.title %>
+              <%= event_post %>
             </p>
             <div class="card-body" style="height: 200px;">
               <p class="card-text">
-                <%#= post.body %>
+                <%= event_post.body %>
               </p>
             </div>
             <div class="card-footer" style="height: 50px;">
             </div>
           </div>
-          <%# end %>
-          <%= paginate @event_post %>
+          <% end %>
+          <%= paginate @event_posts %>
           </div>
   	      <div class="col-md-4">
             <h3 class="text-center">イベント情報</h3>

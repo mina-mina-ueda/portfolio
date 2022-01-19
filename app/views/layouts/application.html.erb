@@ -31,7 +31,8 @@
     <%= yield %>
     </main>
     <div class="fixed-bottom">
-    　<footer class="d-flex justify-content-center py-3">
+    <% unless current_page?(root_path) %>
+      <footer class="d-flex justify-content-center py-3">
         <div class="container">
           <ul class="nav nav-pills d-flex justify-content-center ">
           <% if admin_signed_in? %>
@@ -51,8 +52,9 @@
               <li class="nav-list"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-secondary" %></li>
           </ul>
           <% end %>
-      </div>
-  　</footer>
+        </div>
+  　   </footer>
+    <% end %>
   </div>
  </body>
 </html>
