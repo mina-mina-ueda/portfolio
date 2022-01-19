@@ -15,12 +15,17 @@
  */
  @import "bootstrap";
 
+*{
+  margin:0;
+  padding:0;
+}
+
+
 body {
   background-image: image-url("hoge.jpg");
 }
 
 header {
-  margin-bottom: 30px;
   background-image: image-url('header.jpg'),
 }
 
@@ -47,9 +52,10 @@ ul {
   margin-right: 20px;
 }
 
-main {
-  margin-top: 100px;
-  margin-bottom: 75px;
+body {
+  margin-top: 90px;
+  padding-bottom: 90px;
+  margin-bottom: 100px;
 }
 
 .text-active {
