@@ -1,29 +1,37 @@
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-        <div class="col-md-8">
-<h3 class="text-center">お客様未返答投稿一覧</h3>
-          <% @post.each do |post| %>
-          <div class="card" style="width: 340px;">
-            <p class="card-header">
-              <%= post.category %><%= post.title %>
-            </p>
-            <div class="card-body" style="height: 200px;">
-              <p class="card-text">
-                <%= post.body %>
-              </p>
-            </div>
-            <div class="card-footer" style="height: 50px;">
-              <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-secondary" %>
-            　<p>削除する</p>
-            </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      <div class="col-md-8">
+        <h3 class="text-center">お客様未返答投稿一覧</h3>
+          <%# if @response_save? %>
+          <div class="nodisplay_box">none</div>
+          <%# else %>
+          <div class="display_box">
+            <% @post.each do |post| %>
+              <div class="card" style="width: 340px;">
+                  <p class="card-header">
+                    <%= post.category %><%= post.title %>
+                  </p>
+                <div class="card-body" style="height: 200px;">
+                  <p class="card-text">
+                    <%= post.body %>
+                  </p>
+                </div>
+                <div class="card-footer" style="height: 50px;">
+                  <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-secondary" %>
+                  <p>削除する</p>
+                </div>
+              </div>
+            <% end %>
           </div>
-          <% end %>
-          </div>
-  	      <div class="col-md-4">
-            <h3 class="text-center">イベント情報</h3>
-            <h5>66</h5>
-            <h5>55</td>
-            <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
-        </div>
+        <%# end %>
       </div>
+
+      <div class="col-md-4">
+        <h3 class="text-center">イベント情報</h3>
+        <h5>66</h5>
+        <h5>55</td>
+        <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
+      </div>
+
     </div>
+  </div>
