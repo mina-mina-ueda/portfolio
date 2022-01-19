@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @post = Post.all
+    @post = Post.page(params[:page]).reverse_order
   end
 
   def show

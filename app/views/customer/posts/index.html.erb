@@ -1,6 +1,9 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
         <div class="col-md-8">
+          <% if flash[:notice] %>
+            <p class="text-active"><%= flash[:notice] %></p>
+          <% end %>
 <h3 class="text-center">お客様投稿一覧:返答済み</h3>
           <% @response.each do |response| %>
           <div class="card" style="width: 340px;">
@@ -19,7 +22,8 @@
             </div>
           </div>
           <% end %>
-          </div>
+          </div><br>
+          <%= paginate @response %>
   	      <div class="col-md-4">
             <h3 class="text-center">イベント情報</h3>
           <% @events.each do |event| %>

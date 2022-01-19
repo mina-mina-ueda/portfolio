@@ -46,7 +46,7 @@
               <li class="nav-list"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-secondary" %></li>
           <% else %>
               <li class="nav-list"><%= link_to "About", about_path, class: "btn btn-secondary" %></li>
-              <li class="nav-list"><%= link_to "投稿する", new_customer_session_path, class: "btn btn-secondary" %></li>
+              <li class="nav-list"><%= link_to "投稿を見る", posts_path, class: "btn btn-secondary" %></li>
               <li class="nav-list"><%= link_to "新規登録", new_customer_registration_path, class: "btn btn-secondary" %></li>
               <li class="nav-list"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-secondary" %></li>
           </ul>

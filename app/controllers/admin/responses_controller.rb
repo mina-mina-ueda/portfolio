@@ -2,7 +2,7 @@ class Admin::ResponsesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @response = Response.all
+    @response = Response.page(params[:page]).reverse_order
   end
 
   def new

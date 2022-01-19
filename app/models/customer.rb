@@ -6,4 +6,10 @@ class Customer < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :event_posts, dependent: :destroy
+
+  validates :nickname, presence: true
+  validates :age, presence: true
+  validates :gender, presence: true
+  validates :work, presence: true
+  validates :access, presence: true
 end

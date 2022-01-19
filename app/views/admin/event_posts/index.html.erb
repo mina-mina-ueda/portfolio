@@ -2,7 +2,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
         <div class="col-md-8">
 <h3 class="text-center">イベント投稿一覧</h3>
-          <%# @event_post.each do |event_post| %>
+          <%# @event_posts.each do |event_post| %>
           <div class="card" style="width: 340px;">
             <p class="card-header">
               <%#= event_post.title %>
@@ -16,6 +16,7 @@
             </div>
           </div>
           <%# end %>
+          <%= paginate @event_post %>
           </div>
   	      <div class="col-md-4">
             <h3 class="text-center">イベント情報</h3>
