@@ -1,6 +1,6 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-        <div class="col-md-8">
+        <div class="col-md-9">
 <h3 class="text-center">お客様投稿一覧:返答済み</h3>
           <% @response.each do |response| %>
           <div class="card" style="width: 340px;">
@@ -27,11 +27,18 @@
           <% end %>
           <%= paginate @response %>
           </div>
-  	      <div class="col-md-4">
+  	      <div class="col-md-3">
             <h3 class="text-center">イベント情報</h3>
-            <h5>66</h5>
-            <h5>55</td>
-            <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
+          <% @events.each do |event| %>
+          <div class="ebent_card" style="height: 400px;">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text" style="height: 200px;"><%= event.body %></p>
+            <p class="card-period"><%= event.period %></p>
+          </div>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
+

@@ -3,6 +3,7 @@ class Admin::ResponsesController < ApplicationController
 
   def index
     @response = Response.page(params[:page]).reverse_order
+    @events = Event.all
   end
 
   def new
