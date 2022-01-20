@@ -5,14 +5,16 @@
           <% @event_posts.each do |event_post| %>
           <div class="card" style="width: 340px;">
             <p class="card-header">
-              <%= event_post %>
+              <%= event_post.customer.nickname %>
+              <%= event_post.customer.age %>代
+              <%= event_post.customer.gender %>
+              <%= event_post.customer.work %>
+              <%= event_post.customer.access %>
             </p>
             <div class="card-body" style="height: 200px;">
               <p class="card-text">
                 <%= event_post.body %>
               </p>
-            </div>
-            <div class="card-footer" style="height: 50px;">
             </div>
           </div>
           <% end %>

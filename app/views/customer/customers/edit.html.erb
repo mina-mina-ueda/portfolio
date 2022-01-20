@@ -4,10 +4,11 @@
       <h4 class="text-dark bg-light py-4 mb-0">マイページ編集</h4>
         <div class="form-body p-4">
           <%= form_with model:@customer, local:true do |f| %>
-            <div class="input-group mb-3">
+		        <%= render 'layouts/error_messages', resource: @customer %>
+              <div class="input-group mb-3">
                   <%= f.label :nickname, 'ニックネーム' %>
                   <%= f.text_field :nickname, class:"form-control", id:"nickname", placeholder:"ニックネーム"%>
-            </div>
+              </div>
                 <div class="input-group mb-3">
                   <%= f.label :gender, '性別' %>
                   <%= f.select :gender, ['男性', '女性'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>

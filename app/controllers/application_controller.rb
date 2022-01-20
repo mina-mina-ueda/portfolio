@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
     posts_path(resource)
   end
 
+  def after_sign_out_path_for(resource)
+    posts_path
+  end
+
+
   protected
 
   def configure_permitted_parameters

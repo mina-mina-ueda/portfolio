@@ -4,18 +4,18 @@
       <table class="table table-hover table-inverse">
         <thead>
           <tr>
-            <th><%= @post.category %></th>
+            <th><%= @response.post.category %></th>
           </tr>
           <tr>
-            <th><%= @post.title %></th>
+            <th><%= @response.post.title %></th>
           </tr>
         </thead>
         <tbody>
-          <td><%= @post.body %></td>
+          <td><%= @response.post.body %></td>
         </tbody>
       </table>
       <div class="form-group">
-      <h2 class="text-center">投稿する</h2>
+      <h2 class="text-center">返答を編集する</h2>
       <%# if @response.errors.any? %>
         <%#= @response.errors.count %>
         <%# @response.errors.full_messages.each do |message| %>
@@ -23,12 +23,12 @@
         <%# end %>
       <%# end %>
       <div class="form-body p-4">
-        <%= form_with model:@response, url:admin_post_responses_path do |f| %>
-            <%= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
+        <%#= form_with model:@response, url:admin_post_responses_path do |f| %>
+            <%#= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
           <div class="post-buttom text-center">
-          <%= f.submit "返答を送る", class:"btn btn-info" %>
+          <%#= f.submit "変更を保存する", class:"btn btn-info" %>
           </div>
-        <% end %>
+        <%# end %>
 　　　</div>
       </div>
     </div>

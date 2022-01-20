@@ -3,14 +3,20 @@
     <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
       <div class="form-group">
       <h2 class="text-center">投稿する</h2>
+      <% if @post.errors.any? %>
+        <%= @post.errors.count %>件のエラーが発生しました
+        <% @post.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+      <% end %>
       <div class="form-body p-4">
         <%= form_with model:@post, local: true do |f| %>
               <h4>カテゴリー</h4>
-              <%= f.select :category, ['商品', 'サービス', '設備', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true }%>
+              <%= f.select :category, ['商品', 'サービス', '設備', 'その他'], { include_blank: 'カテゴリーを選択してください'}, { class: 'form-control' , required: true }%>
               <h4>タイトル</h4>
-              <%= f.text_field :title %>
+              <%= f.text_field :title, class:"form-control", placeholder:"見出しを記入してください" %>
               <h4>本文</h4>
-              <%= f.text_area :body  %>
+              <%= f.text_area :body, class:"form-control", placeholder:"ご意見・ご要望を記入してください", size: "20x10" %>
           <div class="post-buttom text-center">
           <%= f.submit "声を投稿する", class:"btn btn-info" %>
           </div>

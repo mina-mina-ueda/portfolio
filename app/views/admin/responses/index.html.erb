@@ -5,19 +5,23 @@
           <% @response.each do |response| %>
           <div class="card" style="width: 340px;">
             <p class="card-header">
-              <%= response.post.category %><%= response.post.title %>
+              <%= response.post.customer.nickname %>
+              <%= response.post.customer.age %>代
+              <%= response.post.customer.gender %>
+              <%= response.post.customer.work %>
+              <%= response.post.customer.access %>
             </p>
+            <%= response.post.category %>『<%= response.post.title %>』
             <div class="card-body" style="height: 200px;">
               <p class="card-text">
-                <%= response.post.body %>
+                お客様の投稿：<br><%= response.post.body %>
               </p>
             </div>
-            <div class="card-footer" style="height: 200px;">
+            <div class="card-footer" style="height: 250px;">
               <p class="card-text">
-                <%= response.response %>
+                店長からの返答：<br><%= response.response %>
               </p>
-
-              <p><%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %></p>
+              <p><%= link_to "編集する", edit_admin_post_response_path(response.post,response), class: "btn btn-secondary" %></p>
             </div>
           </div>
           <% end %>

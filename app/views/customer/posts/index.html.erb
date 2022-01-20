@@ -9,11 +9,15 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-8 order-md-1">
+  </div>
+  <div class="container">
+
+       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      <div class="col-md-9">
+
         <h3 class="text-center">お客様の声一覧</h3>
           <% @response.each do |response| %>
-            <div class="card" style="width: 340px;">
+            <div class="card" style="width: 360px;">
               <div class="card-header">
                 <button type="button" class="btn btn-outline-primary">
                 <%= response.post.category %>
@@ -25,7 +29,7 @@
                   お客様の投稿：<br><%= response.post.body %>
                 </div>
               </div>
-              <div class="card-footer" style="height: 200px;">
+              <div class="card-footer" style="height: 250px;">
               <div class="card-text">
                 店長からの返答：<br><%= response.response %>
               </div>
@@ -34,7 +38,7 @@
           <% end %>
         </div>
     </div>
-        <div class="col-4 order-md-2 mb-4">
+        <div class="col-3">
           <h2 class="text-center">イベント情報</h2>
           <% @events.each do |event| %>
           <div class="ebent_card" style="height: 400px;">

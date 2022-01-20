@@ -15,9 +15,26 @@ class Admin::ResponsesController < ApplicationController
     post_id = params[:post_id]
     @response.post_id = post_id
     @response.admin_id = current_admin.id
-    @response.save!
-    redirect_to admin_posts_path
+    if @response.save!
+      redirect_to admin_posts_path
+    else
+      render :new
+    end
   end
+
+  def edit
+    @response = Response.find(params[:id])
+  end
+
+  def update
+    if @response.update(response_params)
+      redirect_to admin_responses_path, notice: "返答内容を変更しました！"
+    else
+      render :edit
+    end
+  end
+
+
 
   private
   def response_params

@@ -8,7 +8,7 @@ class Customer::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to posts_path, notice: "You have updated user successfully."
+      redirect_to posts_path, notice: "会員情報を更新しました！"
     else
       render :edit
     end
@@ -22,7 +22,7 @@ class Customer::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_deleted: true)
     reset_session
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   private

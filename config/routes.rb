@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :customers, only: [:index]
-    resources :posts, only: [:index, :show, :edit, :update] do
-      resources :responses, only: [:new, :create]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy] do
+      resources :responses, except: [:index]
     end
-    resources :responses, only: [:index]
+    get 'responses/index', to: 'responses#index'
     resources :events, only: [:index, :new, :create, :edit, :update] do
       resources :event_posts, only: [:index]
     end

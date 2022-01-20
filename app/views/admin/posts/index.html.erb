@@ -7,20 +7,22 @@
             <% @post.each do |post| %>
               <% if post.response.nil? %>
               <div class="card" style="width: 340px;">
-                  <p class="card-header">
-                    <%= post.category %><%= post.title %>
-                  </p>
+                  <div class="card-header">
+                    <button type="button" class="btn btn-outline-primary">
+                    <%= post.category %>
+                    </button>
+                    <%= post.title %>
+                  </div>
                 <div class="card-body" style="height: 200px;">
-                  <p class="card-text">
-                    <%= post.body %>
-                  </p>
+                  <div class="card-text">
+                    お客様の投稿：<br><%= post.body %>
+                  </div>
                 </div>
                 <div class="card-footer" style="height: 50px;">
                   <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-secondary" %>
-                  <p>削除する</p>
+                  <%= link_to "削除する", admin_post_path(post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-secondary" %>
                 </div>
               </div>
-
              <% end %>
             <% end %>
           </div>
