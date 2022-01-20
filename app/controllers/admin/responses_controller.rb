@@ -27,6 +27,7 @@ class Admin::ResponsesController < ApplicationController
   end
 
   def update
+    @response = Response.find(params[:id])
     if @response.update(response_params)
       redirect_to admin_responses_path, notice: "返答内容を変更しました！"
     else

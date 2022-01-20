@@ -15,21 +15,21 @@
         </tbody>
       </table>
       <div class="form-group">
-      <h2 class="text-center">返答を編集する</h2>
-      <%# if @response.errors.any? %>
-        <%#= @response.errors.count %>
-        <%# @response.errors.full_messages.each do |message| %>
-        <%#= message %>
+        <h2 class="text-center">返答を編集する</h2>
+        <%# if @response.errors.any? %>
+          <%#= @response.errors.count %>
+          <%# @response.errors.full_messages.each do |message| %>
+          <%#= message %>
+          <%# end %>
         <%# end %>
-      <%# end %>
-      <div class="form-body p-4">
-        <%#= form_with model:@response, url:admin_post_responses_path do |f| %>
+        <div class="form-body p-4">
+          <%#= form_with (model: [post, response], url: admin_response_path(response)) do |f| %>
             <%#= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
-          <div class="post-buttom text-center">
-          <%#= f.submit "変更を保存する", class:"btn btn-info" %>
-          </div>
-        <%# end %>
-　　　</div>
+            <div class="post-buttom text-center">
+            <%#= f.submit "変更を保存する", class:"btn btn-info" %>
+            </div>
+          <%# end %>
+　　　 </div>
       </div>
     </div>
   </div>
