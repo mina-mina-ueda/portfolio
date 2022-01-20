@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-     puts sample0.encode(Encoding::UTF_8)
      <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,7 +18,7 @@
       <p class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">フレッシュ</p>
       <div class="col-md-3 text-end">
         <% if customer_signed_in? %>
-          <p><%= current_customer.nickname %>さん</p>
+          <p>ようこそ<%= current_customer.nickname %>さん！</p>
         <% elsif admin_signed_in?%>
           <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
         <% else %>
@@ -46,8 +45,8 @@
               <li class="nav-list"><%= link_to "マイページ", edit_customer_path(current_customer), class: "btn btn-secondary" %></li>
               <li class="nav-list"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-secondary" %></li>
           <% else %>
-              <li class="nav-list"><%= link_to "About", about_path, class: "btn btn-secondary" %></li>
-              <li class="nav-list"><%= link_to "投稿を見る", posts_path, class: "btn btn-secondary" %></li>
+              <li class="nav-list"><%= link_to "アプリの使い方", about_path, class: "btn btn-secondary" %></li>
+              <li class="nav-list"><%= link_to "投稿をする", new_customer_session_path, class: "btn btn-secondary" %></li>
               <li class="nav-list"><%= link_to "新規登録", new_customer_registration_path, class: "btn btn-secondary" %></li>
               <li class="nav-list"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-secondary" %></li>
           </ul>

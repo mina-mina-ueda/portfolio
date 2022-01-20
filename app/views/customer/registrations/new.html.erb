@@ -8,54 +8,59 @@
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="nickname"></i></span>
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
             </div>
               <%= f.text_field :nickname, autofocus: true, class:"form-control", id:"nickname", placeholder:"ニックネーム" %>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="email"></i></span>
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-envelope"></i></span>
             </div>
               <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"メールアドレス" %>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="password"></i></span>
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div>
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= f.password_field :password, autocomplete: "new-password", class:"form-control", id:"inputPassword", placeholder:"６文字入力してください" %>
           </div>
-
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="password"></i></span>
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div>
-    　　　　  　　　<%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", id:"inputEmail", placeholder:"パスワード確認" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", id:"inputPassword", placeholder:"パスワード確認" %>
             </div>
           <div class="input-group mb-3">
-            <%= f.label :gender, '性別' %>
-            <%= f.select :gender, ['男性', '女性'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-user-circle"></i></span>
+            </div>
+            <%= f.select :gender, ['男性', '女性'], { include_blank: '性別を選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
-            <%= f.label :age, '年齢' %>
-            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-child"></i></span>
+            </div>
+            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '年齢を選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
-            <%= f.label :work, '職業' %>
-            <%= f.select :work, ['公務員', '会社員', '自営業', '専業主婦', 'パート・アルバイト', '学生', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-briefcase"></i></span>
+            </div>
+            <%= f.select :work, ['公務員', '会社員', '自営業', '専業主婦', 'パート・アルバイト', '学生', 'その他'], { include_blank: '職業を選択してください'}, { class: 'form-control' , required: true } %>
           </div>
           <div class="input-group mb-3">
-            <%= f.label :access, '来店手段' %>
-            <%= f.select :access, ['徒歩', '自転車', '車', 'バス', 'その他'], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-car-side"></i></span>
+            </div>
+            <%= f.select :access, ['徒歩', '自転車', '車', 'バス', 'その他'], { include_blank: '当店への来店手段を選択してください'}, { class: 'form-control' , required: true } %>
           </div>
     <%= f.submit "新規登録", class:"btn btn-lg btn-block btn-info mt-5" %>
   </div>
 <% end %>
-<%= render "customer/shared/links" %>
         </div>
       </div>
     </div>
