@@ -10,23 +10,25 @@
     </div>
   </div>
   <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-      <div class="col-md-9">
-        <h3 class="text-center">お客様の声一覧</h3>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      <div class="col-md-8">
+        <h3>お客様の声一覧</h3>
           <% @response.each do |response| %>
-            <div class="card" style="width: 360px;">
-              <div class="card-header">
-                <button type="button" class="btn btn-lg btn-success">
+            <div class="card" style="width: 340px;">
+              <div class="card-body">
+              　<div class="card-body-red">
+                　<button type="button" class="btn btn-lg btn-success">
                 <%= response.post.category %>
                 </button>
                 『<%= response.post.title %>』
+                </div>
               </div>
               <div class="card-body" style="height: 200px;">
                 <div class="card-text">
                   お客様の投稿：<br><%= response.post.body %>
                 </div>
               </div>
-              <div class="card-footer" style="height: 250px;">
+              <div class="card-body" style="height: 250px;">
               <div class="card-text">
                 店長からの返答：<br><%= response.response %>
               </div>
@@ -35,15 +37,16 @@
           <% end %>
         </div>
     </div>
-        <div class="col-3">
-          <h2 class="text-center">イベント情報</h2>
+        <div class="col-4">
+          <h3 class="ivent-title">イベント情報</h3>
           <% @events.each do |event| %>
-          <div class="ebent_card" style="height: 400px;">
+          <div class="event-card" style="height: 400px;">
+          <div class="tape"></div>
           <div class="card-body">
-            <h5 class="card-title"><%= event.title %></h5>
-            <p class="card-text" style="height: 200px;"><%= event.body %></p>
+            <h5 class="event-card-title text-center"><%= event.title %></h5>
+            <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
             <p class="card-period"><%= event.period %>まで</p>
-            <%= link_to "イベントに投稿する", new_event_event_post_path(event), class: "btn btn-secondary" %>
+            <%= link_to "投稿", new_event_event_post_path(event), class: "btn-square-shadow" %>
           </div>
           </div>
           <% end %>

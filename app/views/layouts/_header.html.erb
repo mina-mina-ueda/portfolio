@@ -4,7 +4,7 @@
     <p class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">フレッシュ</p>
     <div class="col-md-3 text-end">
       <% if customer_signed_in? %>
-        <h6>ようこそ<strong><%= current_customer.nickname %>さん！</strong></h6>
+        <h7 class="ribbon7">ようこそ<strong><%= current_customer.nickname %>さん！</strong></h7>
       <% elsif admin_signed_in?%>
         <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
       <% else %>

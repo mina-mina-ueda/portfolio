@@ -42,22 +42,320 @@ ul {
 
 .card {
   float: left;
-  margin-right: 20px;
+  margin-right: 30px;
   margin-bottom: 20px;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
 }
+
+.card:after{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.card p {
+  margin: 0;
+  padding: 0;
+}
+
+.event-card {
+ margin: 2em 0;
+ padding: 1em;
+ background-color: #ffffcc;
+ box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.event-card p {
+  margin: 0;
+  padding: 0;
+}
+
+.tape{
+  display: block;
+  background-color: #ccb;
+  opacity: 0.2;
+  transform: rotate(3deg);
+  width: 40%;
+  height: 35px;
+  margin: -2em auto 0 auto;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+}
+
+.tape-box p{
+  margin: 0;
+  padding: 0;
+}
+
 
 .nav-list {
-  margin-right: 20px;
+  margin-right: 30px;
 }
-
-
 
 .text-active {
   font-weight: bold;
   color: #0a0;
 }
 
-
 .post-buttom {
   margin-top: 30px;
 }
+
+.top {
+  height: 100%;
+  margin-top: 100px;
+}
+
+.btn-square-so-pop {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+
+.btn-square-so-pop:active {
+  /*押したとき*/
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-shadow {
+　position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-shadow-red {
+　position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: red;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+.btn-square-shadow-red:active {
+  /*ボタンを押したとき*/
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+h3 {
+  width: 95%;
+  position: relative;/*相対位置*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: #ff6a6a;/*文字色*/
+  border-top: dotted 1px gray;
+  border-bottom: dotted 1px gray;
+  background: #fffff4;
+}
+
+h3:before {
+  font-family: "Font Awesome 5 Free";/*忘れずに*/
+  content: "\f138";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0.25em;/*アイコンの位置*/
+  top: 0.5em;/*アイコンの位置*/
+  color: #ff6a6a; /*アイコン色*/
+}
+
+.ivent-title {
+  width: 100%;
+  position: relative;/*相対位置*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: #5bb7ae;/*文字色*/
+  border-top: dotted 1px gray;
+  border-bottom: dotted 1px gray;
+  background: #fffff4;
+}
+
+.ivent-title:before {
+  font-family: "Font Awesome 5 Free";/*忘れずに*/
+  content: "\f138";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0.25em;/*アイコンの位置*/
+  top: 0.5em;/*アイコンの位置*/
+  color: #5bb7ae; /*アイコン色*/
+}
+
+.btn-top-radius {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.btn-top-radius:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.btn-top-radius-perple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.btn-top-radius-perple:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.btn-giza-red {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-red {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-blue {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #00bcd4;/*左線*/
+  color: #00bcd4;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-bulue:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-green {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #7bda72;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-perple {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #6680d8;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.ribbon7 {
+  display: inline-block;
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;/*フォントサイズ*/
+  color: #FFF;/*フォントカラー*/
+  background: #acd879;/*リボンの色*/
+}
+
+.ribbon7:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.card-text {
+ backgeound: #FFF;
+}
+
+.event-card-title {
+  position: relative;
+  padding: 0.3em;
+}
+
+.event-card-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+}
+
