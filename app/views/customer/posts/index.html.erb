@@ -1,20 +1,14 @@
 <div class="container">
-  <div class="py-5 text-center">
+  <div class="text-center">
     <% if flash[:notice] %>
       <p class="text-active"><%= flash[:notice] %></p>
     <% end %>
-    <div class="row py-lg-5">
-      <h4 class="col-lg-6 col-md-8 mx-auto">
-        いらっしゃいませ
-      </h4>
-    </div>
   </div>
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-      <div class="col-md-8">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
         <h3>お客様の声一覧</h3>
           <% @response.each do |response| %>
-            <div class="card" style="width: 340px;">
+            <div class="card" style="width: 320px;">
               <div class="card-body">
               　<div class="card-body-red">
                 　<button type="button" class="btn btn-lg btn-success">
@@ -35,21 +29,20 @@
               </div>
             </div>
           <% end %>
-        </div>
     </div>
-        <div class="col-4">
+        <div class="col-md-3">
           <h3 class="ivent-title">イベント情報</h3>
           <% @events.each do |event| %>
           <div class="event-card" style="height: 400px;">
-          <div class="tape"></div>
-          <div class="card-body">
-            <h5 class="event-card-title text-center"><%= event.title %></h5>
-            <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
-            <p class="card-period"><%= event.period %>まで</p>
-            <%= link_to "投稿", new_event_event_post_path(event), class: "btn-square-shadow" %>
-          </div>
+            <div class="tape"></div>
+            <div class="card-body">
+              <h5 class="event-card-title text-center"><%= event.title %></h5>
+              <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
+              <p class="card-period text-center"><%= event.period %>まで</p>
+              <%= link_to "投稿", new_event_event_post_path(event), class: "btn-square-shadow" %>
+            </div>
           </div>
           <% end %>
         </div>
-  </div>
+    </div>
 </div>
