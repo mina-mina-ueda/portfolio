@@ -4,22 +4,19 @@
       <p class="text-active"><%= flash[:notice] %></p>
     <% end %>
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+      <h4 class="col-lg-6 col-md-8 mx-auto">
         いらっしゃいませ
-      </div>
+      </h4>
     </div>
   </div>
-  </div>
   <div class="container">
-
-       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
       <div class="col-md-9">
-
         <h3 class="text-center">お客様の声一覧</h3>
           <% @response.each do |response| %>
             <div class="card" style="width: 360px;">
               <div class="card-header">
-                <button type="button" class="btn btn-outline-primary">
+                <button type="button" class="btn btn-lg btn-success">
                 <%= response.post.category %>
                 </button>
                 『<%= response.post.title %>』

@@ -23,10 +23,6 @@
 }
 
 
-body {
-  background-image: image-url("hoge.jpg");
-}
-
 header {
   background-image: image-url('header.jpg'),
 }
@@ -54,20 +50,13 @@ ul {
   margin-right: 20px;
 }
 
-body {
-  margin-top: 90px;
-  padding-bottom: 90px;
-  margin-bottom: 100px;
-}
+
 
 .text-active {
   font-weight: bold;
   color: #0a0;
 }
 
-.top-image {
-  background-image: image-url('top.jpg'),
-}
 
 .post-buttom {
   margin-top: 30px;
