@@ -76,3 +76,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'cancancan'
 gem 'rails_admin', '~> 2.0'
+gem "dotenv-rails"
+gem "enum_help"
+gem 'rails-i18n'
