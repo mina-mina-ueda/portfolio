@@ -1,3 +1,5 @@
+<div class ="container">
+<h4 class="text-center">お問い合わせフォーム</h4>
 <%= form_for(@contact, url: confirm_path) do |f| %>
   <div class="form-group">
     <%= f.label :name, 'お名前*' %>
@@ -13,3 +15,4 @@
     <%= f.submit '入力内容確認' %>
   </div>
 <% end %>
+</div>
