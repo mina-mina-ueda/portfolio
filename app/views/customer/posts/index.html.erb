@@ -8,7 +8,7 @@
     <div class="col-md-8 offset-md-1">
         <h3>お客様の声一覧</h3>
           <% @response.each do |response| %>
-            <div class="card" style="width: 320px;">
+            <div class="post-card" style="width: 320px;">
               <div class="card-body">
               　<div class="card-body-red">
                 　<button type="button" class="btn btn-lg btn-success">
@@ -38,7 +38,7 @@
             <div class="card-body">
               <h5 class="event-card-title text-center"><%= event.title %></h5>
               <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
-              <p class="card-period text-center"><%= event.period %>まで</p>
+              <h6 class="event-card-period text-center"><%= event.period %>まで</h6>
               <%= link_to "投稿", new_event_event_post_path(event), class: "btn-square-shadow" %>
             </div>
           </div>
