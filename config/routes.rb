@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'responses/index', to: 'responses#index'
     resources :events, only: [:index, :new, :create, :edit, :update] do
       resources :event_posts, only: [:index]
+      get 'event_posts/:id' => 'admin_event_event_posts_path#index'
     end
   end
 
