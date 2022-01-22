@@ -9,7 +9,7 @@
           <%= link_to "管理者画面", "/adminxxx", class: "btn btn-primary" %>
           <% end %>
       <% elsif admin_signed_in?%>
-        <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
+        <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn-giza-grey" %></div>
       <% end %>
     </div>
 </header>

@@ -1,32 +1,18 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <table class="table table-hover table-inverse">
-        <thead>
-          <tr>
-            <th><%= @response.post.category %></th>
-          </tr>
-          <tr>
-            <th><%= @response.post.title %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <td><%= @response.post.body %></td>
-        </tbody>
-      </table>
       <div class="form-group">
-        <h2 class="text-center">返答を編集する</h2>
-        <%# if @response.errors.any? %>
-          <%#= @response.errors.count %>
-          <%# @response.errors.full_messages.each do |message| %>
-          <%#= message %>
-          <%# end %>
-        <%# end %>
+        <h4 class="form text-center">返答を編集する</h4>
+          <div class="opinion" style="height: 200px;">
+            <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= @response.post.category %></p><br>
+            <%= @response.post.body %>
+          </div>
+      <div class="form-group">
         <div class="form-body p-4">
           <%= form_with(model: [:admin, @post, @response], local: true ) do |f| %>
             <%= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
             <div class="post-buttom text-center">
-            <%= f.submit "変更を保存する", class:"btn btn-info" %>
+            <%= f.submit "変更を保存する", class:"btn-square-shadow-red" %>
             </div>
           <% end %>
 　　　 </div>
