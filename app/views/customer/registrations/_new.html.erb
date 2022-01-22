@@ -1,0 +1,24 @@
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-user-circle"></i></span>
+            </div>
+            <%= f.select :gender, ['男性', '女性'], { include_blank: '性別を選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-child"></i></span>
+            </div>
+            <%= f.select :age, ['10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', 'その他'], { include_blank: '年齢を選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-briefcase"></i></span>
+            </div>
+            <%= f.select :work, ['公務員', '会社員', '自営業', '専業主婦', 'パート・アルバイト', '学生', 'その他'], { include_blank: '職業を選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-car-side"></i></span>
+            </div>
+            <%= f.select :access, ['徒歩', '自転車', '車', 'バス', 'その他'], { include_blank: '当店への来店手段を選択してください'}, { class: 'form-control' , required: true } %>
+          </div>

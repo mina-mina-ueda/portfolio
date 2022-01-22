@@ -1,34 +1,27 @@
 <div class="container">
+  <div class="row no-gutters">
     <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-
-    　<div class="my-3 p-3 bg-body rounded shadow-sm">
-        <h6 class="text-center border-bottom pb-2 mb-0">イベント内容</h6>
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">タイトル</strong>
-              <%= @event.title %>
-          </p>
-
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">本文</strong>
-             <%= @event.body %>
-          </p>
-
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">投稿期間</strong>
-    　　　　<%= @event.period %>
-          </p>
-
-        <h4 class="text-center">イベントに投稿する</h4>
+      <div class="form-group">
+        <h4 class="form text-center">イベントに投稿する</h4>
+          　<div class="event-card" style="width: 80%;">
+              <div class="tape"></div>
+                <div class="card-body">
+                  <h5 class="event-card-title text-center"><%= @event.title %></h5>
+                    <p class="event-card-text" style="height: 200px;"><%= @event.body %></p>
+                    <h6 class="event-card-period text-center"><%= @event.period %>まで</h6>
+                    </div>
+                </div>
+              </div>
           <div class="form-body p-4">
             <%= form_with model:@event_post, url:event_event_posts_path(@event) do |f| %>
-              <h4>本文</h4>
                 <%= f.text_area :body, class:"form-control", placeholder:"ご意見・ご要望を記入してください", size: "20x10" %>
                 <div class="post-buttom text-center">
-                  <%= f.submit "イベントに投稿", class:"btn btn-info" %>
+                  <%= f.submit "イベントに投稿", class:"btn-square-shadow-red" %>
                 </div>
             <% end %>
           </div>
       </div>
-
+      </div>
     </div>
+  </div>
 </div>
