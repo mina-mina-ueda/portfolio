@@ -28,7 +28,13 @@ header {
 }
 
 footer {
-  background-image: image-url('header.jpg'),
+  background-image: image-url('header.jpg');
+}
+
+main {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	height: auto;
 }
 
 ul {
@@ -41,29 +47,71 @@ ul {
 }
 
 .post-card {
-  float: left;
-  margin-right: 30px;
-  margin-bottom: 20px;
-  background: #fff0cd;
-  box-shadow: 0px 0px 0px 5px #fff0cd;
-  border: dashed 2px white;
-  padding: 0.2em 0.5em;
-  color: #454545;
+ position: relative;
+ margin: 2em 1em;
+ padding: 10px 30px 15px 25px;
+ width: 90%; /* ボックス幅 */
+ background-color: #fff; /* ボックス背景色 */
+ color: #555555; /* 文章色 */
+ border: 1px solid #ccc; /* 枠線 */
+ box-shadow: 1px 1px 1px #acacac; /* 影の色 */
+}
+.post-card::before {
+ position: absolute;
+ content: '';
+ top: -15px;
+ right: 10px;
+ height: 55px;
+ width: 15px;
+ border: 3px solid #555555; /*クリップ色 */
+ background-color: none;
+ border-radius: 12px;
+ box-shadow: 1px 1px 2px #999;
+ transform: rotate(10deg);
+ z-index: 1;
+}
+.post-card::after {
+ position: absolute;
+ content: '';
+ top: 0px;
+ width: 10px;
+ right: 20px;
+ border: solid 5px #fff; /*背景色と同じ色にする*/
+ z-index: 2;
 }
 
-.card:after{
-  position: absolute;
-  content: '';
-  right: -7px;
-  top: -7px;
-  border-width: 0 15px 15px 0;
-  border-style: solid;
-  border-color: #ffdb88 #fff #ffdb88;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+.post-title {
+ background: linear-gradient(transparent 70%, #FFFF33	 70%);
 }
-.card p {
-  margin: 0;
-  padding: 0;
+
+.category {
+	display: inline-block;
+	margin: 0 .1em .6em 0;
+	padding: .4em;
+	line-height: 1;
+	text-decoration: none;
+	color: white;
+	background-color: #00CC99;
+	border: 1px solid #00CC99;
+	border-radius: 2em;
+}
+
+.response {
+ margin: 2em auto;
+ padding: 1em;
+ width: 90%; /* ボックス幅 */
+ background-color: #EEFFFF; /* ボックス背景色 */
+ color: #666; /* 文章色 */
+ border-radius: 10px; /* 角の丸み */
+}
+
+.opinion {
+ margin: 2em auto;
+ padding: 1em;
+ width: 90%; /* ボックス幅 */
+ background-color: #E6FFE9; /* ボックス背景色 */
+ color: #666; /* 文章色 */
+ border-radius: 10px; /* 角の丸み */
 }
 
 .event-card {
@@ -338,10 +386,6 @@ h3:before {
   border: none;
   border-bottom: solid 15px transparent;
   border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
-}
-
-.card-text {
- backgeound: #FFF;
 }
 
 .event-card-title {
