@@ -1,7 +1,7 @@
 class Customer::PostsController < ApplicationController
   def index
     @response = Response.page(params[:page]).reverse_order
-    @events = Event.page(params[:page]).reverse_order
+    @events = Event.all
   end
 
   def show

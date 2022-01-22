@@ -1,0 +1,22 @@
+<% @response.each do |response| %>
+  <div class="post-card" style="width: 320px;">
+    <div class="card-body">
+      <div class="card-body-red">
+        <button type="button" class="btn btn-lg btn-success">
+          <%= response.post.category %>
+        </button>
+          <%= response.post.title %>』
+      </div>
+      </div>
+      <div class="card-body" style="height: 200px;">
+      <div class="card-text">
+        お客様の投稿：<br><%= response.post.body %>
+      </div>
+      </div>
+      <div class="card-body" style="height: 250px;">
+      <div class="card-text">
+      店長からの返答：<br><%= response.response %>
+      </div>
+    </div>
+  </div>
+<% end %>

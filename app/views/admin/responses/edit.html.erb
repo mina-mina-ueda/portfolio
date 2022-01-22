@@ -23,12 +23,12 @@
           <%# end %>
         <%# end %>
         <div class="form-body p-4">
-          <%#= form_with (model: [post, response], url: admin_response_path(response)) do |f| %>
-            <%#= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
+          <%= form_with(model: [:admin, @post, @response], local: true ) do |f| %>
+            <%= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "20x10" %>
             <div class="post-buttom text-center">
-            <%#= f.submit "変更を保存する", class:"btn btn-info" %>
+            <%= f.submit "変更を保存する", class:"btn btn-info" %>
             </div>
-          <%# end %>
+          <% end %>
 　　　 </div>
       </div>
     </div>

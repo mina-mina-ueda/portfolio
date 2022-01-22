@@ -29,15 +29,7 @@
           </div>
   	      <div class="col-md-3">
             <h3 class="text-center">イベント情報</h3>
-          <% @events.each do |event| %>
-          <div class="ebent_card" style="height: 400px;">
-          <div class="card-body">
-            <h5 class="card-title"><%= event.title %></h5>
-            <p class="card-text" style="height: 200px;"><%= event.body %></p>
-            <p class="card-period"><%= event.period %></p>
-          </div>
-          </div>
-          <% end %>
+             <%= render 'event', events: @events %>
         </div>
       </div>
     </div>

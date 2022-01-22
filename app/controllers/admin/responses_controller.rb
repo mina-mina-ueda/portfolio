@@ -25,12 +25,13 @@ class Admin::ResponsesController < ApplicationController
 
   def edit
     @response = Response.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def update
     @response = Response.find(params[:id])
     if @response.update(response_params)
-      redirect_to admin_responses_path, notice: "返答内容を変更しました！"
+      redirect_to admin_responses_index_path, notice: "返答内容を変更しました！"
     else
       render :edit
     end
@@ -40,7 +41,7 @@ class Admin::ResponsesController < ApplicationController
 
   private
   def response_params
-    params.require(:response).permit(:post_id, :admin_id, :response)
+    params.require(:response).permit(:admin_id, :response)
   end
 
 end
