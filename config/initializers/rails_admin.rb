@@ -4,12 +4,12 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
    config.authenticate_with do
-     warden.authenticate! scope: :customer
+    warden.authenticate! scope: :customer
    end
    config.current_user_method(&:current_customer)
 
   ## == CancanCan ==
-   config.authorize_with :cancancan
+   # config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

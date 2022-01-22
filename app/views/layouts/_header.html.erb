@@ -5,9 +5,11 @@
     <div class="col-md-3 text-end">
       <% if customer_signed_in? %>
         <h7 class="ribbon7">ようこそ<strong><%= current_customer.nickname %>さん！</strong></h7>
+            <% if current_customer.admin %>
+                 <div class="nav-list"><%= link_to "admin", "/admin", class: "btn btn-secondary " %></div>
+            <% end %>
       <% elsif admin_signed_in?%>
         <div class="nav-list"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-secondary " %></div>
-      <% else %>
       <% end %>
     </div>
 </header>
