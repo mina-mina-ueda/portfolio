@@ -496,3 +496,14 @@ h3:before {
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
 }
+
+.btn-square {
+  color: white;
+  background-color: #FFD700;
+}
+
+.btn-square:hover,
+a.btn-square:hover {
+  color: #DEB887;
+  background: #888888;
+}
