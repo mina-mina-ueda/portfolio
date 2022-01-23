@@ -43,7 +43,7 @@ ul {
 }
 
 .form-group-post {
-  height: 400px;
+  height: 450px;
 }
 
 .post-card {
@@ -103,15 +103,22 @@ ul {
  background-color: #EEFFFF; /* ボックス背景色 */
  color: #666; /* 文章色 */
  border-radius: 10px; /* 角の丸み */
+ overflow-y: scroll;
+ height: 90%;
+
 }
 
 .opinion {
  margin: 2em auto;
  padding: 1em;
  width: 90%; /* ボックス幅 */
+ height: 90%;
  background-color: #E6FFE9; /* ボックス背景色 */
  color: #666; /* 文章色 */
  border-radius: 10px; /* 角の丸み */
+ overflow-y: scroll;
+ word-wrap: break-word;
+ white-space: pre-line;
 }
 
 .event-card {
@@ -477,7 +484,7 @@ h3:before {
 }
 
 .btn {
-  margin-right: 100px;
+  margin-left: 30px;
 }
 
 .edit-buttom {
@@ -507,3 +514,4 @@ a.btn-square:hover {
   color: #DEB887;
   background: #888888;
 }
+

@@ -1,5 +1,18 @@
 <% @response.each do |response| %>
   <div class="post-card" style="height: 550px;">
+    <%# if response.favorited_by?(current_customer) %>
+
+      <%#= link_to admin_response_favorites_path(response), method: :delete do %>
+     <%#= response.favorites.count %>
+      <%# end %>
+
+    <%# else %>
+
+      <%#= link_to admin_post_path(response), method: :post do %>
+        <i class="far fa-heart"></i><%#= response.favorites.count %> ！
+      <%# end %>
+
+    <%# end %>
       <h2 class="post-title">
         <%= response.post.title %>
       </h2>
