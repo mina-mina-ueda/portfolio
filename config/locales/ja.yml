@@ -2,4 +2,5 @@ ja:
   enums:
     contact:
       subject:
-        subject: "用件"
+        normal: "通常"
+        urgent: "至急"
