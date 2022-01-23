@@ -1,27 +1,20 @@
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-        <div class="col-md-8">
-<h3 class="text-center">イベント投稿一覧</h3>
-          <% @event_posts.each do |event_post| %>
-          <div class="card" style="width: 340px;">
-            <p class="card-header">
+<div class="container">
+  <h3 class="text-center">イベント投稿一覧</h3>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      <% @event_posts.each do |event_post| %>
+          <div class="post-card" style="widht: 30%">
+            <h4 class="post-title">
               <%= event_post.customer.nickname %>
               <%= event_post.customer.age %>代
               <%= event_post.customer.gender %>
               <%= event_post.customer.work %>
               <%= event_post.customer.access %>
-            </p>
-            <div class="card-body" style="height: 200px;">
-              <p class="card-text">
+            </h4>
+            <div class="opinion" style="height: 200px;">
+              <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><br>
                 <%= event_post.body %>
-              </p>
             </div>
           </div>
-          <% end %>
-
-          </div>
-  	      <div class="col-md-4">
-            <h3 class="text-center">イベント情報</h3>
-        </div>
-      </div>
+      <% end %>
     </div>
+</div>

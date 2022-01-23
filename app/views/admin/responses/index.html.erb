@@ -4,29 +4,29 @@
       <h3>お客様投稿一覧:返答済み</h3>
           <% @response.each do |response| %>
             <div class="post-card" style="height: 580px;">
-            <h2 class="post-title">
-              <%= response.post.title %>
-            </h2>
-            <h4 class="post-title">
-              <%= response.post.customer.nickname %>さん/
-              <%= response.post.customer.age %>代/
-              <%= response.post.customer.gender %>/
-              <%= response.post.customer.work %>/
-              <%= response.post.customer.access %>
-            </h4>
-          <div class="opinion" style="height: 200px;">
-            <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= response.post.category %></p><br>
-        　  <%= response.post.body %>
+              <h2 class="post-title">
+                <%= response.post.title %>
+              </h2>
+              <h4 class="post-title">
+                <%= response.post.customer.nickname %>さん/
+                <%= response.post.customer.age %>代/
+                <%= response.post.customer.gender %>/
+                <%= response.post.customer.work %>/
+                <%= response.post.customer.access %>
+              </h4>
+            <div class="opinion" style="height: 200px;">
+              <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= response.post.category %></p><br>
+          　  <%= response.post.body %>
+            </div>
+            <div class="response" style="height: 200px;">
+            <div class="card-text">
+              <strong>店長からの返答</strong>：<i class="fas fa-user-tie"></i><%= link_to "編集する", edit_admin_post_response_path(response.post,response), class: "edit-buttom" %><br>
+              <%= response.response %>
+            </div>
+            </div>
           </div>
-          <div class="response" style="height: 200px;">
-          <div class="card-text">
-            <strong>店長からの返答</strong>：<i class="fas fa-user-tie"></i><%= link_to "編集する", edit_admin_post_response_path(response.post,response), class: "edit-buttom" %><br>
-            <%= response.response %>
-          </div>
-          </div>
-          </div>
-          <% end %>
-      </div>
+        <% end %>
+    </div>
   	<div class="col-md-4">
       <h3 class="text-center">イベント情報</h3>
         <%= render 'event', events: @events %>

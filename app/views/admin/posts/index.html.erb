@@ -4,9 +4,9 @@
       <% @post.each do |post| %>
             <% if post.response.nil? %>
               <div class="post-card" style="height: 400px">
-                <h4 class="post-title">
+                <h6 class="post-title">
                   <%= post.title %>
-                </h4>
+                </h6>
                 <h4 class="post-title">
                   <%= post.customer.nickname %>さん/
                   <%= post.customer.age %>代/
