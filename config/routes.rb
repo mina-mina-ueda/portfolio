@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index]
     resources :posts, only: [:index, :show, :edit, :update, :destroy] do
       resources :responses, except: [:index]
+        resource :favorites, only: [:create, :destroy]
     end
     get 'responses/index', to: 'responses#index'
     resources :events, only: [:index, :new, :create, :edit, :update] do
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:edit, :update]
       get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
-    resources :posts, except: [:destroy, :edit, :update]do
+    resources :posts, except: [:destroy]do
       collection do
         get 'thanks'
       end
