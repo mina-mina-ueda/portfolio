@@ -1,6 +1,6 @@
 class Customer::PostsController < ApplicationController
   def index
-    @response = Response.page(params[:page]).reverse_order
+    @responses = Response.page(params[:page]).reverse_order
     @events = Event.all
   end
 

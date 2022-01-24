@@ -81,3 +81,4 @@ gem "dotenv-rails"
 gem "enum_help"
 gem 'rails-i18n'
 gem 'rspec-rails'
+gem 'devise-i18n'

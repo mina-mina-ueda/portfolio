@@ -1,4 +1,4 @@
 class Favorite < ApplicationRecord
   belongs_to :customer
-  belongs_to :response
+  belongs_to :post
 end
