@@ -1,18 +1,8 @@
 <% responses.each do |response| %>
   <div class="post-card" style="height: 550px;">
-    <% if response.post.favorited_by?(current_customer) %>
-
-    　<%= link_to post_favorites_path(response.post_id), method: :delete do %>
-      <i class="fas fa-heart"></i><%= response.post.favorites.count %>わかる！
-      <% end %>
-
-    <% else %>
-
-      <%= link_to post_favorites_path(response.post_id), method: :post do %>
-        <i class="far fa-heart"></i><%= response.post.favorites.count %> わかる！
-      <% end %>
-
-    <% end %>
+    <div id="favorite_buttons_<%= response.post.id %>">
+        <%= render 'customer/favorites/favorites', post: response.post %>
+    </div>
       <h4 class="post-title">
         <%= response.post.title %>
       </h4>
