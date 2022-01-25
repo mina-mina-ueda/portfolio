@@ -5,8 +5,10 @@
         <h5 class="event-card-title text-center"><%= event.title %></h5>
           <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
           <h6 class="event-card-period text-center"><%= event.period %>まで</h6>
-
+          <div class="post-buttom text-center">
             <%= link_to "投稿", new_event_event_post_path(event), class: "btn-square-shadow " %>
+          </div>
       </div>
     </div>
   <% end %>
+  <%= paginate events %>

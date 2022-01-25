@@ -33,7 +33,7 @@ footer {
 
 main {
 	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 	height: auto;
   background-image: image-url('main1.png');
 }
@@ -110,14 +110,14 @@ ul {
  border-radius: 10px; /* 角の丸み */
  overflow-y: scroll;
  height: 90%;
-
+ word-wrap: break-word;
+ white-space: pre-line;
 }
 
 .opinion {
  margin: 2em auto;
  padding: 1em;
  width: 90%; /* ボックス幅 */
- height: 90%;
  background-color: #E6FFE9; /* ボックス背景色 */
  color: #666; /* 文章色 */
  border-radius: 10px; /* 角の丸み */
@@ -574,4 +574,8 @@ a.btn-square:hover {
   margin: 2em 0;
   color: #2c2c2f;
   background: #cde4ff;
+}
+
+.thanks {
+  margin-top: 2000px;
 }

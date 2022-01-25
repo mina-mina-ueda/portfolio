@@ -1,6 +1,5 @@
-<%# if current_customer.? %>
+<% if customer_signed_in? %>
 
-<%#else %>
     <% if post.favorited_by?(current_customer) %>
       <%= link_to post_favorites_path(post.id), class: "text-danger", method: :delete, remote: true do %>
       <i class="fas fa-heart"></i><%= post.favorites.count %>わかる！
@@ -10,4 +9,6 @@
       <i class="far fa-heart"></i><%= post.favorites.count %> わかる！
       <% end %>
     <% end %>
-<%# end %>
+<% else %>
+    <i class="fas fa-heart"></i><%= post.favorites.count %> わかる！
+<% end %>

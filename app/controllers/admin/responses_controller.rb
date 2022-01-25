@@ -37,8 +37,6 @@ class Admin::ResponsesController < ApplicationController
     end
   end
 
-
-
   private
   def response_params
     params.require(:response).permit(:admin_id, :response)
