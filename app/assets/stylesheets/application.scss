@@ -24,17 +24,18 @@
 
 
 header {
-  background-image: image-url('blue-gradient-header3.jpg');
+  background-color: #ea5549;
 }
 
 footer {
-  background-image: image-url('blue-gradient-header3.jpg');
+  background-color: #ea5549;
 }
 
 main {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	height: auto;
+  background-image: image-url('main1.png');
 }
 
 .top-image {
@@ -460,10 +461,12 @@ h3:before {
 }
 
 .form {
-  padding: 0.5em;/*文字周りの余白*/
-  color: #010101;/*文字色*/
-  background: #FFC0CB;/*背景色*/
-  border-bottom: solid 3px #FF4F50;/*下線*/
+ color: white;
+ background-color: #FF6633;
+ border-bottom: solid 6px #FFCC33	;
+ border-radius: 10px;
+ box-shadow: 0 4px 5px rgba(0, 0, 0, .4);
+ padding: 10px;
 }
 
 .btn-square-little-rich {

@@ -26,7 +26,7 @@
 お店側が何かイベントを行いたいとき。
 
 ## 設計書
-
+ER図
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/15_4dFh5QDLwRKNhUnJZ0GH_ag6Bz_8ca1gvuKvulN6U/edit?usp=sharing
