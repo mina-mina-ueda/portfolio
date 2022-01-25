@@ -24,19 +24,21 @@
 
 
 header {
-  background-image: image-url('header.jpg'),
+  background-image: image-url('blue-gradient-header3.jpg');
 }
 
 footer {
-  background-image: image-url('header.jpg');
+  background-image: image-url('blue-gradient-header3.jpg');
 }
-
-
 
 main {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	height: auto;
+}
+
+.top-image {
+  text-align: center;
 }
 
 ul {
@@ -549,4 +551,24 @@ a.btn-square:hover {
   transform: translateY(4px);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
+}
+
+.explanation {
+  background: #fffcf4;
+  border-radius :8px;/*角の丸み*/
+  box-shadow :0px 0px 5px silver;/*5px=影の広がり具合*/
+  padding: 0.5em 0.5em 0.5em 2em;
+  margin-top: 100px;
+}
+
+.explanation li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+.about {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #2c2c2f;
+  background: #cde4ff;
 }
