@@ -1,21 +1,20 @@
 <div class="container">
-  <h3 class="text-center">イベント投稿一覧</h3>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+  <div class="row">
+  　<h3 class="text-center">イベント投稿一覧</h3>
       <% @event_posts.each do |event_post| %>
-          <div class="post-card" style="widht: 30%">
-            <h4 class="post-title">
-              <%= event_post.customer.nickname %>
-              <%= event_post.customer.age %>代
-              <%= event_post.customer.gender %>
-              <%= event_post.customer.work %>
-              <%= event_post.customer.access %>
-            </h4>
-            <div class="opinion" style="height: 200px;">
-              <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><br>
-                <%= event_post.body %>
-            </div>
+        <div class="post-card">
+          <h4 class="post-title">
+            <%= event_post.customer.nickname %>/
+            <%= event_post.customer.age %>代/
+            <%= event_post.customer.gender %>/
+            <%= event_post.customer.work %>/
+            <%= event_post.customer.access %>
+          </h4>
+        　<div class="opinion" style="height: 250px;">
+            <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><br>
+              <%= event_post.body %>
           </div>
+        </div>
       <% end %>
-    <%= paginate @event_posts %>
     </div>
 </div>

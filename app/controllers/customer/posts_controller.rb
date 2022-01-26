@@ -18,10 +18,10 @@ class Customer::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.customer_id = current_customer.id
-    if @post.save!
+    if @post.save
       redirect_to thanks_posts_path
     else
-      render :new
+      render "new"
     end
   end
 

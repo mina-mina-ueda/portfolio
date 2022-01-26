@@ -7,9 +7,4 @@ class Admin::EventPostsController < ApplicationController
     @event_posts = EventPost.where(event_id: params[:event_id])
   end
 
-  def show
-    @event_posts = EventPost.page(params[:page]).reverse_order
-    @event = Event.find(params[:event_id])
-  end
-
 end

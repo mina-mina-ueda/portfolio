@@ -3,12 +3,14 @@
     <div class="col-md-7 col-sm-10 mx-sm-auto shadow-lg rounded px-0 my-5">
       <div class="form-group">
       <h4 class="form text-center">投稿する</h4>
-      <% if @post.errors.any? %>
-        <%= @post.errors.count %>件のエラーが発生しました
-        <% @post.errors.full_messages.each do |message| %>
-        <%= message %>
-        <% end %>
-      <% end %>
+        <div class="text-center">
+          <% if @post.errors.any? %>
+            <%= @post.errors.count %>件のエラーが発生しました。<br>
+            <% @post.errors.full_messages.each do |message| %>
+            <%= message %>
+            <% end %>
+          <% end %>
+        </div>
       <div class="form-body p-4">
         <%= form_with model:@post, local: true do |f| %>
               <h4></h4>

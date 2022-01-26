@@ -24,6 +24,7 @@ class Admin::EventsController < ApplicationController
     @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to admin_events_path
+      flash[:event] = "イベント内容を変更しました！"
     else
       render "edit"
     end

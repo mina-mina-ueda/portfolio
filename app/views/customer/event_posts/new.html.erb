@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row no-gutters">
-    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5 ">
       <div class="form-group">
         <h4 class="form text-center">イベントに投稿する</h4>
           　<div class="event-card" style="width: 80%;">
@@ -14,7 +14,7 @@
               </div>
           <div class="form-body p-4">
             <%= form_with model:@event_post, url:event_event_posts_path(@event) do |f| %>
-                <%= f.text_area :body, class:"form-control", placeholder:"ご意見・ご要望を記入してください", size: "20x10" %>
+              <%= f.text_area :body, class:"form-control", placeholder:"ご意見・ご要望を記入してください", size: "20x10" %>
                 <div class="post-buttom text-center">
                   <%= f.submit "イベントに投稿", class:"btn-square-shadow-red" %>
                 </div>

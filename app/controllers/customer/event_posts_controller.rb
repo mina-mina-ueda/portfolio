@@ -1,4 +1,5 @@
 class Customer::EventPostsController < ApplicationController
+  before_action :authenticate_customer!
   before_action :move_to_signed_in
 
   def new
@@ -11,8 +12,12 @@ class Customer::EventPostsController < ApplicationController
     event_id = params[:event_id]
     @event_post.event_id = event_id
     @event_post.customer_id = current_customer.id
-    @event_post.save!
-    redirect_to thanks_posts_path
+    if @event_post.save!
+      flash[:alert] = "イベントに投稿できました。ありがとうございました！"
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   private

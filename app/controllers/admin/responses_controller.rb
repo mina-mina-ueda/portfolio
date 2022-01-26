@@ -17,6 +17,7 @@ class Admin::ResponsesController < ApplicationController
     @response.post_id = post_id
     @response.admin_id = current_admin.id
     if @response.save!
+      flash[:response] = "返答できました！"
       redirect_to admin_posts_path
     else
       render :new
@@ -31,7 +32,7 @@ class Admin::ResponsesController < ApplicationController
   def update
     @response = Response.find(params[:id])
     if @response.update(response_params)
-      redirect_to admin_responses_index_path, notice: "返答内容を変更しました！"
+      redirect_to admin_responses_index_path
     else
       render :edit
     end
