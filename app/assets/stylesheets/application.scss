@@ -130,6 +130,10 @@ ul {
  white-space: pre-line;
 }
 
+.col-md-7 {
+  background-color: white;
+}
+
 .event-card {
  margin: 2em 0;
  padding: 1em;
@@ -582,4 +586,8 @@ a.btn-square:hover {
 
 .thanks {
   margin-top: 2000px;
+}
+
+tbody {
+  background-color: white;
 }

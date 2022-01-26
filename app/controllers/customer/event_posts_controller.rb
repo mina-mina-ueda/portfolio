@@ -12,7 +12,7 @@ class Customer::EventPostsController < ApplicationController
     event_id = params[:event_id]
     @event_post.event_id = event_id
     @event_post.customer_id = current_customer.id
-    if @event_post.save!
+    if @event_post.save
       flash[:alert] = "イベントに投稿できました。ありがとうございました！"
       redirect_to posts_path
     else
