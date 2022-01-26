@@ -24,18 +24,18 @@
 
 
 header {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 footer {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 main {
 	padding-top: 30px;
 	padding-bottom: 50px;
 	height: auto;
-  background-image: image-url('main2.png');
+  background-image: image-url('main5.png');
 }
 
 .top-image {
@@ -590,4 +590,12 @@ a.btn-square:hover {
 
 tbody {
   background-color: white;
+}
+
+.col-md-5 {
+  background-color: white;
+}
+
+.img {
+  padding-left: 30px;
 }
