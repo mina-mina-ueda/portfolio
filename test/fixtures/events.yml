@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin_id: 1
+  title: MyString
+  body: MyText
+  period: 2022-01-18
+
+two:
+  admin_id: 1
+  title: MyString
+  body: MyText
+  period: 2022-01-18

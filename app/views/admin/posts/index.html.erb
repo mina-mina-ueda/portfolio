@@ -1,26 +1,32 @@
-<div class='container px-5 px-sm-0'>
+<div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <h3>お客様投稿一覧</h3>
+    <% if flash[:response] %>
+      <p class="text-active"><%= flash[:response] %></p>
+    <% end %>
+    <h3>お客様未返答投稿一覧</h3>
       <% @post.each do |post| %>
-        <div class="card" style="width: 280px;">
-          <h3 class="card-header">
-            <%= post.category %><%= post.title %>
-          </h3>
-          <div class="card-body">
-            <%= post.body %>
-          </div>
-          <div class="card-footer">
-            <%= link_to "詳しく見る", new_admin_post_response_path(post), class: "btn btn-secondary" %>
-          </div>
-        </div>
+        <% if post.response.nil? %>
+              <div class="post-card" style="height: 400px">
+                <h4 class="post-title">
+                  <%= post.title %>
+                </h4>
+                <h4 class="post-title">
+                  <%= post.customer.nickname %>さん/
+                  <%= post.customer.age %>代/
+                  <%= post.customer.gender %>/
+                  <%= post.customer.work %>/
+                  <%= post.customer.access %>
+                </h4>
+              <div class="opinion" style="height: 200px;">
+                <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= post.category %></p><br>
+              <%= post.body %>
+              </div>
+                <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-primary" %>
+                <%= link_to "削除する", admin_post_path(post), method: :delete, remote: true, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger" %>
+            </div>
+        <% end %>
       <% end %>
-  	</div>
-  	  <div class="col-md-4">
-      	<h3 class="text-center">イベント情報</h3>
-        <h5><%#= event_post.title %></h5>
-        <h5><%#= event_post.body %></td>
-        <%#= link_to "編集する", edit_admin_event_post_path, class: "btn btn-secondary" %>
-      </div>
+    <%= paginate @post %>
   </div>
 </div>
+

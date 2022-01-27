@@ -1,32 +1,31 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <table class="table table-hover table-inverse">
-        <thead>
-          <tr>
-            <th><%= @post.category %></th>
-          </tr>
-          <tr>
-            <th><%= @post.title %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <td><%= @post.body %></td>
-        </tbody>
-      </table>
       <div class="form-group">
-      <h2 class="text-center">投稿する</h2>
+      <h4 class="form text-center">投稿する</h4>
+              <div class="post-card" style="height: 700px;">
+            <h2 class="post-title">
+              <%= @post.title %>
+            </h2>
+            <h4 class="post-title">
+              <%= @post.customer.nickname %>さん/
+              <%= @post.customer.age %>代/
+              <%= @post.customer.gender %>/
+              <%= @post.customer.work %>/
+              <%= @post.customer.access %>
+            </h4>
+          <div class="opinion" style="height: 200px;">
+            <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= @post.category %></p><br>
+            <%= @post.body %>
+          </div>
       <div class="form-body p-4">
         <%= form_with model:@response, url:admin_post_responses_path do |f| %>
-            <h4>返答を書く</h4>
-            <%= f.text_field :response %>
+            <%= f.text_area :response, class:"form-control", placeholder:"返答を記入してください。", size: "10x10" %>
           <div class="post-buttom text-center">
-          <%= f.submit "返答を送る", class:"btn btn-info" %>
+          <%= f.submit "返答を送る", class:"btn-square-shadow-red" %>
           </div>
         <% end %>
 　　　</div>
       </div>
     </div>
   </div>
-</div>
-

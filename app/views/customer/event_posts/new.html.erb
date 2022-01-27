@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5 ">
+      <div class="form-group center-block">
+        <h4 class="form text-center">イベントに投稿する</h4>
+          　<div class="event-card ml-5" style="width: 80%;">
+              <div class="tape"></div>
+                <div class="card-body">
+                  <h5 class="event-card-title text-center"><%= @event.title %></h5>
+                    <p class="event-card-text" style="height: 200px;"><%= @event.body %></p>
+                    <h6 class="event-card-period text-center"><%= @event.period %>まで</h6>
+                    </div>
+                </div>
+              </div>
+          <div class="form-body p-4">
+            <%= form_with model:@event_post, url:event_event_posts_path(@event) do |f| %>
+              <%= f.text_area :body, class:"form-control", placeholder:"ご意見・ご要望を記入してください", size: "20x10" %>
+                <div class="post-buttom text-center">
+                  <%= f.submit "イベントに投稿", class:"btn-square-shadow-red" %>
+                </div>
+            <% end %>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

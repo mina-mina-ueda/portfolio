@@ -14,18 +14,32 @@
  *= require_self
  */
  @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
 
-body {
-  background-image: image-url("hoge.jpg");
+*{
+  margin:0;
+  padding:0;
 }
 
+
 header {
-  background-color: yellow;
-  margin-bottom: 30px;
+  background-color: whitesmoke;
 }
 
 footer {
-  background-color: yellow;
+  background-color: whitesmoke;
+}
+
+main {
+	padding-top: 30px;
+	padding-bottom: 50px;
+	height: auto;
+  background-image: image-url('main5.png');
+}
+
+.top-image {
+  text-align: center;
 }
 
 ul {
@@ -34,12 +48,554 @@ ul {
 }
 
 .form-group-post {
-  height: 400px;
+  height: 450px;
 }
 
-.card {
-  float:left;
-  margin-right:20px;
-  margin-bottom:20px;
+.form-group {
+ background-color: white;
 }
 
+.post-card {
+ position: relative;
+ margin: 2em 1em;
+ padding: 10px 30px 15px 25px;
+ width: 90%; /* ボックス幅 */
+ background-color: #fff; /* ボックス背景色 */
+ color: #555555; /* 文章色 */
+ border: 1px solid #ccc; /* 枠線 */
+ box-shadow: 1px 1px 1px #acacac; /* 影の色 */
+}
+.post-card::before {
+ position: absolute;
+ content: '';
+ top: -15px;
+ right: 10px;
+ height: 55px;
+ width: 15px;
+ border: 3px solid #555555; /*クリップ色 */
+ background-color: none;
+ border-radius: 12px;
+ box-shadow: 1px 1px 2px #999;
+ transform: rotate(10deg);
+ z-index: 1;
+}
+.post-card::after {
+ position: absolute;
+ content: '';
+ top: 0px;
+ width: 10px;
+ right: 20px;
+ border: solid 5px #fff; /*背景色と同じ色にする*/
+ z-index: 2;
+}
+
+.post-title {
+ background: linear-gradient(transparent 70%, #FFFF33	 70%);
+}
+
+.category {
+	display: inline-block;
+	margin: 0 .1em .6em 0;
+	padding: .4em;
+	line-height: 1;
+	text-decoration: none;
+	color: white;
+	background-color: #00CC99;
+	border: 1px solid #00CC99;
+	border-radius: 2em;
+}
+
+.response {
+ margin: 2em auto;
+ padding: 1em;
+ width: 90%; /* ボックス幅 */
+ background-color: #EEFFFF; /* ボックス背景色 */
+ color: #666; /* 文章色 */
+ border-radius: 10px; /* 角の丸み */
+ overflow-y: scroll;
+ height: 90%;
+ word-wrap: break-word;
+ white-space: pre-line;
+}
+
+.opinion {
+ margin: 2em auto;
+ padding: 1em;
+ width: 90%; /* ボックス幅 */
+ background-color: #E6FFE9; /* ボックス背景色 */
+ color: #666; /* 文章色 */
+ border-radius: 10px; /* 角の丸み */
+ overflow-y: scroll;
+ word-wrap: break-word;
+ white-space: pre-line;
+}
+
+.col-md-7 {
+  background-color: white;
+}
+
+.event-card {
+ margin: 2em 0;
+ padding: 1em;
+ background-color: #ffffcc;
+ box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.event-card p {
+  margin: 0;
+  padding: 0;
+}
+
+.tape{
+  display: block;
+  background-color: #ccb;
+  opacity: 0.2;
+  transform: rotate(3deg);
+  width: 40%;
+  height: 35px;
+  margin: -2em auto 0 auto;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+}
+
+.tape-box p{
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-list {
+  margin-right: 30px;
+}
+
+.text-active {
+  font-weight: bold;
+  color: #0a0;
+}
+
+.post-buttom {
+  margin-top: 30px;
+}
+
+.top {
+  height: 100%;
+  margin-top: 100px;
+}
+
+.btn-square-so-pop {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+
+.btn-square-so-pop:active {
+  /*押したとき*/
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-shadow {
+　position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-shadow-red {
+　position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: red;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}
+.btn-square-shadow-red:active {
+  /*ボタンを押したとき*/
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+h3 {
+  width: 95%;
+  position: relative;/*相対位置*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: #ff6a6a;/*文字色*/
+  border-top: dotted 1px gray;
+  border-bottom: dotted 1px gray;
+  background: #fffff4;
+}
+
+h3:before {
+  font-family: "Font Awesome 5 Free";/*忘れずに*/
+  content: "\f138";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0.25em;/*アイコンの位置*/
+  top: 0.5em;/*アイコンの位置*/
+  color: #ff6a6a; /*アイコン色*/
+}
+
+.event-title {
+  width: 100%;
+  position: relative;/*相対位置*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: #5bb7ae;/*文字色*/
+  border-top: dotted 1px gray;
+  border-bottom: dotted 1px gray;
+  background: #fffff4;
+}
+
+.event-title:before {
+  font-family: "Font Awesome 5 Free";/*忘れずに*/
+  content: "\f138";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0.25em;/*アイコンの位置*/
+  top: 0.5em;/*アイコンの位置*/
+  color: #5bb7ae; /*アイコン色*/
+}
+
+.btn-top-radius {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.btn-top-radius:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.btn-top-radius-perple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.btn-top-radius-perple:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.btn-giza-red {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-red {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-grey {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #BBBBBB;/*左線*/
+  color: #000000;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-bulue:grey {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-blue {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #00bcd4;/*左線*/
+  color: #00bcd4;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-bulue:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-green {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #7bda72;/*左線*/
+  color: #7bda72;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.btn-giza-perple {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #6680d8;/*左線*/
+  color: #6680d8;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-giza-red:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.ribbon7 {
+  display: inline-block;
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;/*フォントサイズ*/
+  color: #FFF;/*フォントカラー*/
+  background: #acd879;/*リボンの色*/
+}
+
+.ribbon7:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.event-card-title {
+  position: relative;
+  padding: 0.3em;
+}
+
+.event-card-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+}
+
+.event-card-text {
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+.event-card-text p {
+    margin: 0;
+    padding: 0;
+}
+
+.event-card-period  {
+  position: relative;
+  padding-left: 0.7em;/*アイコン分のスペース*/
+  line-height: 1.4;
+}
+
+.event-card-period:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+  font-weight: 900;
+}
+
+.form {
+ color: white;
+ background-color: #FF6633;
+ border-bottom: solid 6px #FFCC33	;
+ border-radius: 10px;
+ box-shadow: 0 4px 5px rgba(0, 0, 0, .4);
+ padding: 10px;
+}
+
+.btn-square-little-rich {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #03A9F4;/*色*/
+  border: solid 1px #0f9ada;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.btn-square-little-rich:active {
+  /*押したとき*/
+  border: solid 1px #03A9F4;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.btn {
+  margin-left: 50px;
+}
+
+.edit-buttom {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.edit-buttom:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.btn-square {
+  color: white;
+  background-color: #FFD700;
+}
+.btn-gradient-3d-simple {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+}
+
+.btn-gradient-3d-simple:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+.btn-square:hover,
+a.btn-square:hover {
+  color: #DEB887;
+  background: #888888;
+}
+
+.btn-gradient {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+}
+
+.btn-gradient {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.explanation {
+  background: #fffcf4;
+  border-radius :8px;/*角の丸み*/
+  box-shadow :0px 0px 5px silver;/*5px=影の広がり具合*/
+  padding: 0.5em 0.5em 0.5em 2em;
+  margin-top: 50px;
+}
+
+.explanation li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+.about {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #2c2c2f;
+  background: #cde4ff;
+}
+
+.thanks {
+  margin-top: 2000px;
+}
+
+tbody {
+  background-color: white;
+}
+
+.col-md-5 {
+  background-color: white;
+}
+
+.img {
+  padding-left: 30px;
+}

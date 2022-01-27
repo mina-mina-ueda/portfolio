@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_100221) do
+ActiveRecord::Schema.define(version: 2022_01_26_134310) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,9 +20,18 @@ ActiveRecord::Schema.define(version: 2022_01_12_100221) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "icon_id"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "phone_number", null: false
+    t.text "message", null: false
+    t.integer "subject", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_100221) do
     t.string "work"
     t.string "access"
     t.boolean "is_deleted", default: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -48,6 +58,23 @@ ActiveRecord::Schema.define(version: 2022_01_12_100221) do
     t.string "title"
     t.text "body"
     t.date "period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "event_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "admin_id"
+    t.string "title"
+    t.text "body"
+    t.date "period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

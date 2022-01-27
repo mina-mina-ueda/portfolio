@@ -1,0 +1,12 @@
+ja:
+  enums:
+    contact:
+      subject:
+        app: アプリに関するお問い合わせ
+        st: 店舗に関するお問い合わせ
+  activerecord:
+    attributes:
+      post:
+        title: タイトル
+        body: 内容
+        category: カテゴリー

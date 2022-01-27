@@ -1,0 +1,19 @@
+<% responses.each do |response| %>
+  <div class="post-card" style="height: 550px;">
+    <div id="favorite_buttons_<%= response.post.id %>">
+        <%= render 'customer/favorites/favorites', post: response.post %>
+    </div>
+      <h4 class="post-title">
+        <%= response.post.title %>
+      </h4>
+        <div class="opinion" style="height: 200px;">
+        <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= response.post.category %></p><br>
+        　<%= response.post.body %>
+        </div>
+        <div class="response" style="height: 200px;">
+          <strong>店長からの返答</strong>：<i class="fas fa-user-tie"></i><br>
+          <%= response.response %>
+      </div>
+  </div>
+<% end %>
+<%= paginate responses %>
