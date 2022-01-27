@@ -26,8 +26,9 @@
 お店側が何かイベントを行いたいとき。
 
 ## 設計書
-ER図[ER図　ポートフォリオ.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949150/ER.pdf)
-
+[ER図　ポートフォリオ.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949150/ER.pdf)
+[ポートフォリオ_テーブル提議書.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949165/_.pdf)
+[ポートフォリオ_アプリケーション詳細設計_回答用  のコピー.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949166/_._.pdf)
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/15_4dFh5QDLwRKNhUnJZ0GH_ag6Bz_8ca1gvuKvulN6U/edit?usp=sharing
