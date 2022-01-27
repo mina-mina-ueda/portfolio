@@ -24,18 +24,17 @@
 
 
 header {
-  background-color: whitesmoke;
+  background-color: #ffbd59;
 }
 
 footer {
-  background-color: whitesmoke;
+  background-color: #EEEEEE;
 }
 
 main {
-	padding-top: 30px;
+	padding-top: 10px;
 	padding-bottom: 50px;
 	height: auto;
-  background-image: image-url('main5.png');
 }
 
 .top-image {
@@ -235,25 +234,37 @@ ul {
 }
 
 h3 {
-  width: 95%;
-  position: relative;/*相対位置*/
-  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
-  line-height: 1.4;/*行高*/
-  color: #ff6a6a;/*文字色*/
-  border-top: dotted 1px gray;
-  border-bottom: dotted 1px gray;
-  background: #fffff4;
+ position: relative;
+ background: #f7f7f7;
+ padding: 2px 5px 2px 20px;
+ font-size: 20px;
+ color: #474747;
+ border-radius: 0 10px 10px 0;
+ margin-top: 20px;
+ width: 95%;
 }
 
 h3:before {
-  font-family: "Font Awesome 5 Free";/*忘れずに*/
-  content: "\f138";/*アイコンのユニコード*/
-  font-weight: 900;
-  position: absolute;/*絶対位置*/
-  font-size: 1em;/*サイズ*/
-  left: 0.25em;/*アイコンの位置*/
-  top: 0.5em;/*アイコンの位置*/
-  color: #ff6a6a; /*アイコン色*/
+ font-family: "Font Awesome fas fa-carrot";
+ content: "\f041";
+ display: inline-block;
+ line-height: 40px;
+ position: absolute;
+ padding: 0em;
+ color: white;
+ background: #f89174;
+ font-weight: 900;
+ width: 40px;
+ text-align: center;
+ height: 40px;
+ line-height: 40px;
+ left: -1.35em;
+ top: 50%;
+ -webkit-transform: translateY(-50%);
+ transform: translateY(-50%);
+ border-radius: 50%;
+ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.29);
+ border-bottom: solid 2px #4967b4;
 }
 
 .event-title {
@@ -405,22 +416,8 @@ h3:before {
 }
 
 .ribbon7 {
-  display: inline-block;
-  position: relative;
-  padding: 5px 10px;
-  font-size: 18px;/*フォントサイズ*/
-  color: #FFF;/*フォントカラー*/
-  background: #acd879;/*リボンの色*/
-}
-
-.ribbon7:before {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 0;
-  border: none;
-  border-bottom: solid 15px transparent;
-  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+  color: black;/*文字色*/
+  border-bottom: dashed 2px black;
 }
 
 .event-card-title {
@@ -599,3 +596,21 @@ tbody {
 .img {
   padding-left: 30px;
 }
+
+.pricing-header img{
+  width: 50%;
+  height: 40%;
+}
+
+.pricing-header h4{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  /*文字の装飾は省略*/
+  }
+
