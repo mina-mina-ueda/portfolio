@@ -26,6 +26,7 @@
 お店側が何かイベントを行いたいとき。
 
 ## 設計書
+[UI Flows図.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949211/UI.Flows.pdf)<br>
 [ER図　ポートフォリオ.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949150/ER.pdf)<br>
 [ポートフォリオ_テーブル提議書.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949165/_.pdf)<br>
 [ポートフォリオ_アプリケーション詳細設計_回答用  のコピー.pdf](https://github.com/mina-mina-ueda/portfolio/files/7949166/_._.pdf)
