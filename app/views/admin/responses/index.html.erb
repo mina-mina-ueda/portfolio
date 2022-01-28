@@ -4,9 +4,9 @@
       <h3>お客様投稿一覧:返答済み</h3>
           <% @response.each do |response| %>
             <div class="post-card" style="height: 580px;">
-              <h2 class="post-title">
+              <h1 class="post-title">
                 <%= response.post.title %>
-              </h2>
+              </h1>
               <h4 class="post-title">
                 <%= response.post.customer.nickname %>さん/
                 <%= response.post.customer.age %>代/
