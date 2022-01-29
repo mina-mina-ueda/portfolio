@@ -33,8 +33,9 @@ footer {
 
 main {
 	padding-top: 10px;
-	padding-bottom: 50px;
-	height: auto;
+	padding-bottom: 10px;
+  background-image: image-url('cart.png');
+  background-size: contain;
 }
 
 .top-image {
@@ -125,6 +126,7 @@ ul {
  color: #666; /* 文章色 */
  border-radius: 10px; /* 角の丸み */
  overflow-y: scroll;
+ height: 90%;
  word-wrap: break-word;
  white-space: pre-line;
 }
@@ -134,18 +136,18 @@ ul {
 }
 
 .event-card-text {
-  background-color: #cafbce;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 2px #cafbce;
+  background-color: #ffdbdb;
+  border: 2px solid #ffc1c1;
+  box-shadow: 0 0 0 2px #ffdbdb;
   color: black;
   margin: 1em 0;
   padding: 1em;
 }
 
 .event-card-title {
-  background-color: #cafbce;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 2px #cafbce;
+  background-color: #ffdbdb;
+  border: 2px solid #ffc1c1;
+  box-shadow: 0 0 0 2px #ffdbdb;
   color: black;
   padding: 1em;
 }
@@ -162,8 +164,6 @@ ul {
 }
 
 .event-card-period:before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f00c";/*アイコンのユニコード*/
   font-weight: 900;
   position: absolute;/*絶対位置*/
   font-size: 1em;/*サイズ*/
@@ -543,6 +543,7 @@ a.btn-square:hover {
   box-shadow :0px 0px 5px silver;/*5px=影の広がり具合*/
   padding: 0.5em 0.5em 0.5em 2em;
   margin-top: 50px;
+  list-style: none;
 }
 
 .explanation li {
@@ -558,7 +559,16 @@ a.btn-square:hover {
 }
 
 .thanks {
-  margin-top: 200px;
+  margin-bottom: 50%;
+}
+
+.thankyou {
+  font-size:4em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #FFAB91;
+	margin-top: 100px;
 }
 
 tbody {
