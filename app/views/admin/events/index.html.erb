@@ -11,9 +11,9 @@
         <div class="card-body">
           <h5 class="event-card-title text-center"><%= event.title %></h5>
           <p class="event-card-text" style="height: 200px;"><%= event.body %></p>
-          <h6 class="event-card-period text-center"><%= event.period %>まで</h6>
-            <%= link_to "イベントを編集", edit_admin_event_path(event), class: "btn btn-succsess" %></p>
-            <%= link_to "このイベントの投稿を見る", admin_event_event_posts_path(event), class: "btn btn-warning" %></p>
+          <h6 class="event-card-title text-center"><i class="fas fa-check-circle"></i><%= event.period %>まで</h6>
+            <%= link_to "イベントを編集", edit_admin_event_path(event), class: "btn btn-outline-secondary btn-sm btn-block" %></p>
+            <%= link_to "このイベントの投稿を見る", admin_event_event_posts_path(event), class: "btn btn-outline-warning btn-sm btn-block" %></p>
         </div>
          </div>
       <% end %>
@@ -21,13 +21,13 @@
     </div>
     <div class="col-md-4">
       <h3 class="ivent-title">イベントを作成</h3>
-　      <div class="event-card" style="height: 550px;">
+        <div class="event-card" style="height: 550px;">
           <div class="tape"></div>
           <div class="card-body">
           <h5 class="event-card-title text-center">タイトル</h5>
           <p class="event-card-text text-center" style="height: 300px;">内容をここに書きましょう！</p>
-            <h6 class="event-card-period text-center">〇〇年〇〇月〇〇日まで</h6>
-            <%= link_to "イベントを新規作成", new_admin_event_path, class: "btn btn-danger" %>
+            <h6 class="event-card-title text-center"><i class="fas fa-check-circle"></i>〇〇年〇〇月〇〇日まで</h6>
+            <%= link_to "イベントを新規作成", new_admin_event_path, class: "btn btn-danger btn-sm btn-block" %>
           </div>
         </div>
     </div>
