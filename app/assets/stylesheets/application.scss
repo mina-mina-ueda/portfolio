@@ -33,9 +33,8 @@ footer {
 
 main {
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
   background-image: image-url('cart.png');
-  background-size: contain;
 }
 
 .top-image {
@@ -544,6 +543,7 @@ a.btn-square:hover {
   padding: 0.5em 0.5em 0.5em 2em;
   margin-top: 50px;
   list-style: none;
+  margin-bottom: 50px;
 }
 
 .explanation li {
