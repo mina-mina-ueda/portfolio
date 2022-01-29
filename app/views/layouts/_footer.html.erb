@@ -8,7 +8,7 @@
           <li class="nav-list"><%= link_to "イベント", admin_events_path, class: "btn-giza-green" %></li>
           <li class="nav-list"><%= link_to "投稿一覧", admin_responses_index_path, class: "btn-giza-perple" %></li>
         <% elsif customer_signed_in? %>
-          <li class="nav-list"><%= link_to "投稿を見る", posts_path, class: "btn-giza-red"  %></li>
+          <li class="nav-list"><%= link_to "投稿を見る", posts_path, class: "btn-giza-red" %></li>
           <li class="nav-list"><%= link_to "投稿する", new_post_path, class: "btn-giza-blue"  %></li>
           <li class="nav-list"><%= link_to "マイページ", edit_customer_path(current_customer), class: "btn-giza-green" %></li>
           <li class="nav-list"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn-giza-perple" %></li>

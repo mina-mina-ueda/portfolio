@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :customers, only: [:index]
-    resources :posts, only: [:index, :show, :edit, :update, :destroy] do
+    resources :posts, only: [:index, :edit, :update, :destroy] do
       resources :responses, except: [:index]
     end
     get 'responses/index', to: 'responses#index'
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:edit, :update]
       get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
-    resources :posts, except: [:destroy]do
+    resources :posts, except: [:destroy, :edit, :update]do
       resource :favorites, only: [:create, :destroy]
       collection do
         get 'thanks'

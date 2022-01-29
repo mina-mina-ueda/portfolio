@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row">
     <% if flash[:response] %>
       <p class="text-active"><%= flash[:response] %></p>
     <% end %>
-    <h3>お客様未返答投稿一覧</h3>
+        <div class="admin-post">
+   <h3>お客様未返答投稿一覧</h3>
       <% @post.each do |post| %>
         <% if post.response.nil? %>
-              <div class="post-card" style="height: 400px">
+              <div class="post-card">
                 <h4 class="post-title">
                   <%= post.title %>
                 </h4>
@@ -26,7 +26,7 @@
             </div>
         <% end %>
       <% end %>
-    <%= paginate @post %>
-  </div>
+      </div>
+    </div>
 </div>
 

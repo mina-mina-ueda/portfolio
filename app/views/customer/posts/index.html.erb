@@ -1,5 +1,15 @@
 <div class="container">
   <div class="text-center">
+    <div class="pricing-header text-center">
+      <div class="display-3 fw-normal">
+        <div class="row">
+          <%= image_tag('top.right.jpg') %>
+          <%= image_tag('top.head1.png') %>
+          <%= image_tag('top.left.jpg') %>
+        </div>
+      </div>
+              <h2>安心・新鮮・おいしさ</h2>
+    </div>
     <% if flash[:notice] %>
       <p class="text-active"><%= flash[:notice] %></p>
     <% end %>
@@ -12,7 +22,7 @@
       <h3>お客様の声一覧</h3>
         <%= render 'index', responses: @responses %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h3 class="ivent-title">イベント情報</h3>
         <%= render 'event', events: @events %>
     </div>
