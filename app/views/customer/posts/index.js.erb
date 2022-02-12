@@ -1,1 +1,1 @@
- $('#pagenate').html("<%= escape_javascript(render '_index_page') %>");
+ $('#response-pagenate').html("<%= escape_javascript(render 'index_response', responses: @responses) %>");
