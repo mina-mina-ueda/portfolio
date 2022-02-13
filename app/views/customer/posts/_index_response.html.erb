@@ -1,7 +1,7 @@
 <% responses.each do |response| %>
   <div class="post-card" style="height: 550px;">
     <div id="favorite_buttons_<%= response.post.id %>">
-        <%= render 'customer/favorites/favorites', post: response.post %>
+      <%= render 'customer/favorites/favorites', post: response.post %>
     </div>
       <h4 class="post-title">
         <%= response.post.title %>
@@ -16,4 +16,6 @@
       </div>
   </div>
 <% end %>
-<%= paginate responses %>
+<div class="pagination">
+  <%= paginate responses, remote: true %>
+</div>

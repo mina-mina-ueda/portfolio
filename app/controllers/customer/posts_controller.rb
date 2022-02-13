@@ -3,12 +3,16 @@ class Customer::PostsController < ApplicationController
 
   def index
     @responses = Response.page(params[:page]).reverse_order
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
     @events = Event.page(params[:page]).reverse_order
   end
 
   def show
     @post = Post.find(params[:id])
-    #@response = @post.response
   end
 
   def new
