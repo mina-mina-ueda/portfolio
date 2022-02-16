@@ -6,24 +6,24 @@
    <h3>お客様未返答投稿一覧</h3>
       <% @post.each do |post| %>
         <% if post.response.nil? %>
-              <div class="post-card">
-                <h4 class="post-title">
-                  <%= post.title %>
-                </h4>
-                <h4 class="post-title">
-                  <%= post.customer.nickname %>さん/
-                  <%= post.customer.age %>代/
-                  <%= post.customer.gender %>/
-                  <%= post.customer.work %>/
-                  <%= post.customer.access %>
-                </h4>
-              <div class="opinion" style="height: 200px;">
-                <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= post.category %></p><br>
-              <%= post.body %>
-              </div>
-                <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-primary" %>
-                <%= link_to "削除する", admin_post_path(post), method: :delete, remote: true, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger" %>
-            </div>
+          <div class="post-card">
+            <h4 class="post-title">
+              <%= post.title %>
+            </h4>
+            <h4 class="post-title">
+              <%= post.customer.nickname %>さん/
+              <%= post.customer.age %>代/
+              <%= post.customer.gender %>/
+              <%= post.customer.work %>/
+              <%= post.customer.access %>
+            </h4>
+          <div class="opinion" style="height: 200px;">
+            <strong>お客様の投稿</strong>：<i class="fas fa-user"></i><p class="category"><%= post.category %></p><br>
+            <%= post.body %>
+          </div>
+            <%= link_to "返答する", new_admin_post_response_path(post), class: "btn btn-primary" %>
+            <%= link_to "削除する", admin_post_path(post), method: :delete, remote: true, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger" %>
+          </div>
         <% end %>
       <% end %>
       </div>
