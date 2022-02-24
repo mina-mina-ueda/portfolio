@@ -12,7 +12,7 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.admin_id = current_admin.id
-    @event.save!
+    @event.save
     redirect_to admin_events_path
   end
 
